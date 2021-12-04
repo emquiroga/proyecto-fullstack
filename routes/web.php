@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrosController;
-use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\ContactoController;
 
 
 
@@ -27,5 +27,5 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('/libros', [LibrosController::class, 'index'])->name('home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('libros', LibrosController::class)->middleware('auth');
-    // Route::resource('/mensajes', MensajeController::class);
+    Route::resource('contacto', ContactoController::class);
 });
