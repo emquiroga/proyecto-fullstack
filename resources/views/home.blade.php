@@ -19,5 +19,13 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <div class="alert alert-success" role="alert">
+        Bienvenidos a nuestro proyecto!
+    </div>
 </div>
 @endsection
