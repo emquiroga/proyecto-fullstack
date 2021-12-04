@@ -14,7 +14,7 @@ class MensajeController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**
@@ -38,48 +38,48 @@ class MensajeController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Mensaje  $mensaje
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Mensaje $mensaje)
-    {
-        //
-    }
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  \App\Models\Mensaje  $mensaje
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show(Mensaje $mensaje)
+    // {
+    //     //
+    // }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mensaje  $mensaje
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Mensaje $mensaje)
-    {
-        //
-    }
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  \App\Models\Mensaje  $mensaje
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Mensaje $mensaje)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mensaje  $mensaje
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Mensaje $mensaje)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  \App\Models\Mensaje  $mensaje
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, Mensaje $mensaje)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Mensaje  $mensaje
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Mensaje $mensaje)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  \App\Models\Mensaje  $mensaje
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy(Mensaje $mensaje)
+    // {
+    //     //
+    // }
 }
