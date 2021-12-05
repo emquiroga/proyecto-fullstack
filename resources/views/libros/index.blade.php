@@ -13,7 +13,9 @@
         <hr>
         <div class="container">
             @foreach($libros as $libro)
-            @extends('libros.card')
+            <a href="{{url('/libros/' . $libro->id) }}">
+                <img class="img-fluid" src="{{ asset('storage') . '/' . $libro->portada }}" class="card-img-top" alt="...">
+            </a>
             @endforeach
         </div>
     </div>

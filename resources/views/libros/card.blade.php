@@ -20,5 +20,10 @@
     <div class="card-body">
       <a href="{{url('/libros/' . $libro->id . '/edit')}}"><button class="btn btn-warning w-100">Editar</button></a>
       <a href="{{url('/libros')}}"><button class="btn btn-primary w-100">Volver</button></a>
+      <form method="POST" action="{{url('/libros/' . $libro->id)}}">
+        @csrf
+        {{ method_field('DELETE')}}
+        <button type="submit" value="Borrar" class="btn btn-danger w-100" onclick="return confirm('¿Estás seguro de querer borrar este registro?')" role="button"><i class="fas fa-trash"></i></button>
+    </form>
     </div>
 </div>
