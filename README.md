@@ -10,6 +10,8 @@
 -   php artisan key:generate
 -   php artisan migrate
 -   npm install
+-   php storage:link
+-   npm run watch para compilar css/js de resources a public
 
 ### Nueva branch:
 
