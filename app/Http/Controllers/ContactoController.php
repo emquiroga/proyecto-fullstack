@@ -14,7 +14,10 @@ class ContactoController extends Controller
      */
     public function index()
     {
-        return view('contacto.index');
+        $params = [
+            'title' => 'Contacto',
+        ];
+        return view('contacto.index', $params);
     }
 
     /**
@@ -35,7 +38,23 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validations = [
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'mensaje' => 'required|min:30',
+        ];
+        $mensaje = [
+            'required' => 'El campo :attribute es requerido',
+            'min' => 'El campo :attribute debe tener al menos :min caracteres',
+        ];
+
+        $this->validate($request, $validations, $mensaje);
+
+        $datosContacto = request()->except('_token');
+
+        Contacto::insert($datosContacto);
+
+        return redirect('/contacto')->with('mensaje', 'Mensaje enviado correctamente');
     }
 
     /**

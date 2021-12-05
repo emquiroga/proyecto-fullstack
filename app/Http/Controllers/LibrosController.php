@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Libros;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class LibrosController extends Controller
 {
@@ -14,7 +16,11 @@ class LibrosController extends Controller
      */
     public function index()
     {
-        return view('libros.index');
+        $params = [
+            'title' => 'Mis libros',
+        ];
+        $libros['libros'] = Libros::all();
+        return view('libros.index', $params, $libros);
     }
 
     /**
@@ -24,7 +30,10 @@ class LibrosController extends Controller
      */
     public function create()
     {
-        //
+        $params = [
+            'title' => 'Ingreso de Libro'
+        ];
+        return view('libros.create', $params);
     }
 
     /**
@@ -35,7 +44,35 @@ class LibrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validations = [
+            'titulo' => 'required',
+            'autor' => 'required',
+            'portada' => 'required',
+            'enlace' => 'required',
+            'comentarios' => 'required',
+            'editorial' => 'required',
+            'edicion' => 'required',
+            'isbn' => 'required',
+            'fecha_publicacion' => 'required',
+            'categoria' => 'required',
+            'idioma' => 'required',
+            'valoracion' => 'required',
+            'apa' => 'required',
+        ];
+        $mensaje = [
+            'required' => 'El campo :attribute es requerido',
+            'portada.required' => 'La portada es requerida',
+        ];
+        $this->validate($request, $validations, $mensaje);
+
+        $libro = request()->except('_token');
+
+        if($request->hasFile('portada')){
+            $libro['portada'] = $request->file('portada')->store('uploads', 'public');
+        }
+        Libros::insert($libro);
+
+        return redirect('libros')->with('mensaje', 'Libro agregado con exito');
     }
 
     /**
@@ -44,9 +81,14 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function show(Libros $libros)
+    public function show($id)
     {
-        //
+        $libro = Libros::findOrFail($id);
+        $params = [
+            'title' => 'Detalle del libro',
+            'libro' => $libro
+        ];
+        return view('libros.show', $params);
     }
 
     /**
@@ -55,9 +97,14 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function edit(Libros $libros)
+    public function edit(Libros $libros, $id)
     {
-        //
+        $libro = Libros::findOrFail($id);
+        $params = [
+            'title' => 'Editar datos',
+            'libro' => $libro
+        ];
+        return view('libros.edit', $params, compact('libro'));
     }
 
     /**
@@ -67,9 +114,45 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Libros $libros)
+    public function update(Request $request, Libros $libros, $id)
     {
-        //
+        $validations = [
+            'titulo' => 'required',
+            'autor' => 'required',
+            'portada' => 'required',
+            'enlace' => 'required',
+            'comentarios' => 'required',
+            'editorial' => 'required',
+            'edicion' => 'required',
+            'isbn' => 'required',
+            'fecha_publicacion' => 'required',
+            'categoria' => 'required',
+            'idioma' => 'required',
+            'valoracion' => 'required',
+            'apa' => 'required',
+        ];
+        $mensaje = [
+            'required' => 'El campo :attribute es requerido',
+            'portada.required' => 'La portada es requerida',
+        ];
+        $this->validate($request, $validations, $mensaje);
+
+        $libro = request()->except('_token', '_method');
+
+        if($request->hasFile('portada')){
+            $libro = Libros::findOrFail($id);
+            Storage::delete('public/'.$libro->portada);
+            $nueva_Portada['portada'] = $request->file('portada')->store('uploads', 'public');
+        }
+        Libros::where('id', '=', $id)->update($libro);
+
+        $libro = Libros::findOrFail($id);
+        $params = [
+            'title' => 'Detalle del libro',
+            'libro' => $libro
+        ];
+
+        return redirect('libros')->with('mensaje', 'Libro actualizado con exito');
     }
 
     /**
@@ -78,8 +161,13 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Libros $libros)
+    public function destroy($id)
     {
-        //
+        $libro=Libros::findOrFail($id);
+        if(Storage::delete('public/'. $libro->portada)) {
+            Libros::destroy($id);
+        }
+        Libros::destroy($id);
+        return redirect('libros')->with('mensaje', 'Libro eliminado con éxito de tu biblioteca');
     }
 }
