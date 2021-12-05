@@ -41,7 +41,7 @@ class ContactoController extends Controller
         $validations = [
             'nombre' => 'required',
             'email' => 'required|email',
-            'mensaje' => 'required|min:30',
+            'mensaje' => 'required|min:30|max:250',
         ];
         $mensaje = [
             'required' => 'El campo :attribute es requerido',
