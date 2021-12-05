@@ -142,7 +142,7 @@ class LibrosController extends Controller
         if($request->hasFile('portada')){
             $libro = Libros::findOrFail($id);
             Storage::delete('public/' . $libro->portada);
-            $nueva_portada['portada'] = $request->file('portada')->store('uploads', 'public');
+            $libro_update['portada'] = $request->file('portada')->store('uploads', 'public');
         }
 
         Libros::where('id', '=', $id)->update($libro_update);
@@ -165,8 +165,8 @@ class LibrosController extends Controller
     public function destroy($id)
     {
         $libro=Libros::findOrFail($id);
-        if(Storage::delete('public/'. $libro->portada)) {
-            Libros::destroy($id);
+        if(Libros::destroy($id) && Storage::delete('public/'. $libro->portada)) {
+            Storage::delete('public/'. $libro->portada);
         }
         Libros::destroy($id);
         return redirect('libros')->with('mensaje', 'Libro eliminado con éxito de tu biblioteca');
