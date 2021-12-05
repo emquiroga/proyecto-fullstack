@@ -47,7 +47,7 @@ class LibrosController extends Controller
         $validations = [
             'titulo' => 'required',
             'autor' => 'required',
-            'portada' => 'required',
+            'portada' => 'required|max:10000|mimes:jpeg,jpg,png',
             'enlace' => 'required',
             'comentarios' => 'required',
             'editorial' => 'required',
@@ -114,12 +114,12 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Libros $libros, $id)
+    public function update(Request $request, $id)
     {
         $validations = [
             'titulo' => 'required',
             'autor' => 'required',
-            'portada' => 'required',
+            'portada' => 'required|max:10000|mimes:jpeg,jpg,png',
             'enlace' => 'required',
             'comentarios' => 'required',
             'editorial' => 'required',
@@ -137,14 +137,15 @@ class LibrosController extends Controller
         ];
         $this->validate($request, $validations, $mensaje);
 
-        $libro = request()->except('_token', '_method');
+        $libro_update = request()->except('_token', '_method');
 
         if($request->hasFile('portada')){
             $libro = Libros::findOrFail($id);
-            Storage::delete('public/'.$libro->portada);
-            $nueva_Portada['portada'] = $request->file('portada')->store('uploads', 'public');
+            Storage::delete('public/' . $libro->portada);
+            $nueva_portada['portada'] = $request->file('portada')->store('uploads', 'public');
         }
-        Libros::where('id', '=', $id)->update($libro);
+
+        Libros::where('id', '=', $id)->update($libro_update);
 
         $libro = Libros::findOrFail($id);
         $params = [
@@ -152,7 +153,7 @@ class LibrosController extends Controller
             'libro' => $libro
         ];
 
-        return redirect('libros')->with('mensaje', 'Libro actualizado con exito');
+        return redirect('/libros/' . $id)->with('mensaje', 'Libro actualizado con exito');
     }
 
     /**

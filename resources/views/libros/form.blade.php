@@ -16,7 +16,7 @@
     <input class="form-control" type="text" name="autor" id="apellido" value="{{isset($libro) ? $libro->autor : old('autor') }}">
 </div>
 <div class="form-group">
-    <label for="portada" class="">Portada</label>
+    <label for="portada" class="">Portada </label>
     <br>
     @isset($libro)
     <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->foto }}" alt={{$libro->titulo . " / " . $libro->autor}}>
@@ -25,11 +25,7 @@
 </div>
 <div class="form-group">
     <label for="enlace" class="">Enlace </label>
-    <br>
-    @isset($libro)
-    <p>{{$libro->enlace}}</p>
-    @endisset
-    <input class="form-control" type="file" name="enlace" id="enlace" value="{{isset($libro) ? $libro->enlace : old('enlace') }}">
+    <input class="form-control" type="text" name="enlace" id="enlace" value="{{isset($libro) ? $libro->enlace : old('enlace') }}">
 </div>
 <div class="form-group">
     <label for="comentarios" class="">Comentarios </label>
