@@ -30,6 +30,12 @@ class CreateLibrosTable extends Migration
             $table->string('apa');
 
             $table->timestamps();
+
+            $table->foreignId('idUser')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
 
