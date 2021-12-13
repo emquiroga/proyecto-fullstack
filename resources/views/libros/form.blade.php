@@ -19,9 +19,9 @@
     <label for="portada" class="">Portada </label>
     <br>
     @isset($libro)
-    <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->foto }}" alt={{$libro->titulo . " / " . $libro->autor}}>
+    <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->portada }}" alt={{$libro->titulo . " / " . $libro->autor}}>
     @endisset
-    <input class="mt-3" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
+    <input class="form-control" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
 </div>
 <div class="form-group">
     <label for="enlace" class="">Enlace </label>
