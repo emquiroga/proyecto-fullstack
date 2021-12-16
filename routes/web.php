@@ -19,7 +19,6 @@ use App\Http\Controllers\ContactoController;
 */
 
 // Route::resource('libros', LibrosController::class)->middleware('auth');
- Route::get('/libros2', 'App\Http\Controllers\user_libros_controller@index');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
