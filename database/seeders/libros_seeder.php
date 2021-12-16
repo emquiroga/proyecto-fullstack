@@ -19,7 +19,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Philosopher's Stone.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG',
+            'portada' => 'uploads/01.png',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Bloomsbury Publishing',
@@ -39,7 +39,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Chamber of Secrets.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://static.wikia.nocookie.net/esharrypotter/images/b/b6/Harry_Potter_y_la_Camara_Secreta_Portada_Espa%C3%B1ol.PNG',
+            'portada' => 'uploads/02.png',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Scholastic Corporation',
@@ -58,7 +58,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Prisoner of Azkaban.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://static.wikia.nocookie.net/esharrypotter/images/8/81/Harry_Potter_y_el_prisionero_de_Azkaban_Portada_Espa%C3%B1ol.PNG',
+            'portada' => 'uploads/03.png',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Bloomsbury Publishing',
@@ -76,7 +76,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Goblet of Fire.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://www.librosdemario.com/covers/04/06/82/cover.jpg',
+            'portada' => 'uploads/04.jpg',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Bloomsbury Publishing',
@@ -94,7 +94,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Order of the Phoenix.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://static.wikia.nocookie.net/esharrypotter/images/9/9d/Harry_Potter_y_la_Orden_del_F%C3%A9nix_Portada_Espa%C3%B1ol.PNG',
+            'portada' => 'uploads/05.png',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Scholastic Corporation',
@@ -113,7 +113,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Half-Blood Prince.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://i1.wp.com/bloghogwarts.com/wp-content/uploads/2013/07/Harry-Potter-BlogHogwarts-Harry-Potter-y-el-Misterio-del-Pr%C3%ADncipe.jpg',
+            'portada' => 'uploads/06.jpg',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Scholastic Corporation',
@@ -132,7 +132,7 @@ class libros_seeder extends Seeder
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Deathly Hallows.",
             'autor' => 'J. K. Rowling',
-            'portada' => 'https://static.wikia.nocookie.net/esharrypotter/images/5/59/Harry_Potter_y_las_Reliquias_de_la_Muerte_portada_espa%C3%B1ol.jpg',
+            'portada' => 'uploads/07.jpg',
             'enlace' => 'https://www.amazon.com/s?k=harry+potter+books&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=32E5O23ZGJHXG&sprefix=harry+potter+b%2Caps%2C362&ref=nb_sb_ss_ts-doa-p_3_14',
             'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
             'editorial' => 'Scholastic Corporation',
@@ -143,6 +143,24 @@ class libros_seeder extends Seeder
             'idioma' => "English",
             'valoracion' => '5',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Deathly Hallows. New York :Arthur A. Levine Books.",
+            'created_at' =>date('Y-m-d H:m:s'),
+            'updated_at' =>date('Y-m-d H:m:s'),
+            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+        ]);
+        \DB::table('libros')->insert([
+            'titulo' => "The Fellowship of the Ring.",
+            'autor' => 'J. R. R. Tolkien',
+            'portada' => 'uploads/08.gif',
+            'enlace' => 'https://www.amazon.com/-/es/J-R-R-Tolkien/dp/0358653037/ref=sr_1_3?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=Z1PUUIX03G6K&keywords=lord+of+the+rings+books&qid=1638916358&sprefix=lord+of+the+rings+books%2Caps%2C352&sr=8-3',
+            'comentarios' => $faker->realText($maxNbChars = 200, $indexSize = 2),
+            'editorial' => 'Scholastic Corporation',
+            'edicion' => $faker->randomDigit(),
+            'isbn' => '9780261102385',
+            'fecha_publicacion' => '1954',
+            'categoria' => 'Fantasy',
+            'idioma' => "English",
+            'valoracion' => '5',
+            'apa' => "Tolkien, J. R. R. 1991. The Lord of the Rings. London, England: HarperCollins..",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
             'idUser' => $faker->numberBetween($min = 1, $max = 10)

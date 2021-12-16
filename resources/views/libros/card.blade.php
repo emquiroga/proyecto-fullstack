@@ -1,6 +1,5 @@
 <div class="card mx-auto" style="width: 18rem;">
-    <!-- <img class="img-thumbnail img-fluid" src="{{ asset('storage') . '/' . $libro->portada }}" class="card-img-top" alt="..."> -->
-    <img class="img-thumbnail img-fluid" src="{{ $libro->portada }}" class="card-img-top" alt="...">
+    <img class="img-thumbnail img-fluid" src="{{ asset('storage') . '/' . $libro->portada }}" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-tittle"><strong>Título: </strong>{{$libro->titulo}},</h4>
       <h5 class="card-title"><strong>Autor: </strong>{{ $libro->autor }}</h5>
