@@ -18,12 +18,10 @@ use App\Http\Controllers\ContactoController;
 |
 */
 
-// Route::resource('libros', LibrosController::class)->middleware('auth');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    // Route::get('/libros', [LibrosController::class, 'index'])->name('home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('libros', LibrosController::class)->middleware('auth');
     Route::resource('contacto', ContactoController::class);
