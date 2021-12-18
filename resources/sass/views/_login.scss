@@ -11,8 +11,14 @@
         height: 75px;
         margin: 2rem auto;
         padding: 1rem;
-        background-color: #E5E6FF;
+        background-color: $bg-lightBlue;
         border-radius: 50%;
+    }
+
+    form {
+        input:focus {
+            background-color: $bg-lightBlue;
+        }
     }
 
     hr {

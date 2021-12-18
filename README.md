@@ -9,9 +9,9 @@
 -   composer install
 -   php artisan key:generate
 -   php artisan migrate
+-   php artisan storage:link
 -   npm install
--   php storage:link
--   npm run watch para compilar css/js de resources a public
+-   npm run dev para compilar css/js de resources a public (si sale en consola que no reconoce "mix" como script, ejecutar "npm uninstall laravel-mix" y volver a instalar con "npm i laravel-mix")
 
 ### Nueva branch:
 

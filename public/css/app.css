@@ -11302,6 +11302,9 @@ textarea.form-control-lg {
   background-color: #E5E6FF;
   border-radius: 50%;
 }
+.form-container form input:focus {
+  background-color: #E5E6FF;
+}
 .form-container hr {
   width: 80%;
   height: 2px;
