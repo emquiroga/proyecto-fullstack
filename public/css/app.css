@@ -11294,6 +11294,60 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
 }
+.form-container form input:focus {
+  background-color: #E5E6FF;
+}
+
+.navbar {
+  background-color: #7879F1 !important;
+}
+.navbar .container {
+  color: #E5E6FF;
+}
+.navbar .container button {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+@media screen and (min-width: 768px) {
+  .navbar .container button {
+    visibility: hidden;
+  }
+}
+.navbar .container a {
+  color: white;
+  transition: all 150ms ease-in-out;
+}
+.navbar .container a:hover {
+  color: #E5E6FF !important;
+}
+.navbar .navbar-nav {
+  align-items: flex-end;
+}
+.navbar .dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.navbar .dropdown-menu {
+  background-color: #7879F1 !important;
+  left: -150%;
+  border: none;
+  text-align: right;
+}
+.navbar .dropdown-menu .dropdown-item:hover {
+  color: black !important;
+}
+
 .form-container .user-icon {
   width: 75px;
   height: 75px;
@@ -11302,11 +11356,62 @@ textarea.form-control-lg {
   background-color: #E5E6FF;
   border-radius: 50%;
 }
-.form-container form input:focus {
-  background-color: #E5E6FF;
-}
 .form-container hr {
   width: 80%;
+  max-width: 450px;
   height: 2px;
   margin: auto;
+}
+
+.title-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-row h3, .title-row .h3 {
+  margin: 0;
+  padding: 0;
+}
+.title-row svg {
+  width: 20px;
+  height: 20px;
+}
+.title-row svgpath {
+  fill: #E5E6FF;
+}
+
+.books-container {
+  width: auto;
+  height: 250px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.books-container .card-container {
+  min-width: 100px;
+  max-width: 100px;
+  height: 230px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.books-container .card-container p {
+  text-align: center;
+}
+.books-container .card-container .rating {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.books-container .card-container .rating svg {
+  width: 15px;
+}
+.books-container .card-container .rating svg path {
+  fill: #7879F1;
 }

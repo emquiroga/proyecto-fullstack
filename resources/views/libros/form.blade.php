@@ -57,7 +57,7 @@
 </div>
 <div class="form-group">
     <label for="valoracion" class="">Valoración </label>
-    <input class="form-control" type="text" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
+    <input class="form-control" type="number" min="1" max="5" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
 </div>
 <div class="form-group">
     <label for="apa" class="">Cita formato APA</label>

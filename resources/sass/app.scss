@@ -7,5 +7,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Config & Utils
+@import 'globals';
+@import 'utils';
+
+//Components
+@import 'components/forms';
+@import 'components/navbar';
+
 //Views
 @import 'views/login';
+@import 'views/libros';

@@ -1,3 +1,60 @@
-.red-test {
-    background-color: red;
+//INDEX VIEW
+.title-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+
+        &path{
+            fill: $bg-lightBlue;
+        }
+    }
 }
+.books-container {
+    width: auto;
+    height: 250px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    .card-container {
+        min-width: 100px;
+        max-width: 100px;
+        height: 230px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+
+        p {
+            text-align: center;
+        }
+        .rating {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+
+            svg {
+                width: 15px;
+
+                path {
+                    fill: $bg-blue;
+                }
+            }
+        }
+    }
+}
+
