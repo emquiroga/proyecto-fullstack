@@ -1,7 +1,7 @@
 //Buttons
 .buttons-wrapper {
     width: 90%;
-    margin: auto;
+    margin: 1rem auto;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -25,7 +25,11 @@
         color: black;
     }
 }
-.back-btn {
+.btn-small {
+    width: 120px !important;
+    margin: auto 0 !important;
+}
+.icon-btn {
     width: 40px;
     height: 40px;
     display: block;

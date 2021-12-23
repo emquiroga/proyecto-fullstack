@@ -11286,9 +11286,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .buttons-wrapper {
   width: 90%;
-  margin: auto;
+  margin: 1rem auto;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -11313,7 +11318,12 @@ textarea.form-control-lg {
   color: black;
 }
 
-.back-btn {
+.btn-small {
+  width: 120px !important;
+  margin: auto 0 !important;
+}
+
+.icon-btn {
   width: 40px;
   height: 40px;
   display: block;
@@ -11324,17 +11334,17 @@ textarea.form-control-lg {
   transition: all 150ms ease-in-out;
   cursor: pointer;
 }
-.back-btn svg {
+.icon-btn svg {
   width: 100%;
   height: auto;
 }
-.back-btn svg path {
+.icon-btn svg path {
   fill: #E5E6FF;
 }
-.back-btn:hover {
+.icon-btn:hover {
   background-color: #E5E6FF;
 }
-.back-btn:hover svg path {
+.icon-btn:hover svg path {
   fill: #7879F1;
 }
 
