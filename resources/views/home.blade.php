@@ -2,37 +2,15 @@
 
 @section('content')
 <div class="container">
-    {{-- <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br> --}}
-    <div class="alert alert-success" role="alert">
-        Bienvenidos a nuestro proyecto!
-    </div>
+    <h1 class="alert alert-success" role="alert">
+        Bienvenidos a nuestro proyecto final
+    </h1>
     <div class="col align-items-start">
         <div class="col alert alert-danger">
-            <h1>Titulo del proyecto</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, qui animi. Sapiente quia saepe a placeat, quas unde magnam, voluptates dolor delectus, vitae mollitia esse ipsa iste architecto porro soluta!</p>
+            <h3><strong>Titulo del proyecto: </strong><em>Bilbioteca Digital</em></h3>
+            <h3><strong>Descripción: </strong><em>Nuestra aplicación es un gestor de libros digitales desarrollado con tecnologías PHP (Laravel), Sass y Bootstrap. Se trata de una aplicación dinámica que permite el registro de usuarios y la gestión (ABML) de libros almacenados en una base de datos MySQL. Nuestra app también cuenta con un formulario de contacto programado para enviar un mail a cada uno de los integrantes de nuestro equipo.</em></h3>
             <br>
-            <h2>Integrantes del proyecto</h2>
+            <h4>Integrantes del proyecto</h4>
             <ul>
                 <li>Integrante</li>
                 <li>Integrante</li>

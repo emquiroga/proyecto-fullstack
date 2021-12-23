@@ -1,29 +1,30 @@
 //INDEX VIEW
 .title-row {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem 0;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    border: 1px inset $bg-lightBlue;
+    box-shadow: $bg-blue 4px 4px 2px;
 
     h3 {
-        margin: 0;
+        font-weight: 700;
+        margin: auto;
         padding: 0;
-    }
-
-    svg {
-        width: 20px;
-        height: 20px;
-
-        &path{
-            fill: $bg-lightBlue;
-        }
     }
 }
 .books-container {
     width: 100%;
+    max-width: 800px;
+    margin: auto;
     height: auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 
@@ -38,6 +39,15 @@
 
         p {
             text-align: center;
+        }
+
+        @media screen and (min-width: $tablet) {
+            min-width: 120px;
+            max-width: 120px;
+        }
+        @media screen and (min-width: $large) {
+            min-width: 200px;
+            max-width: 200px;
         }
     }
 }
@@ -57,6 +67,8 @@
 }
 //SHOW VIEW
 .book-container {
+    max-width: 800px;
+    margin: auto;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
@@ -84,10 +96,16 @@
                 font-weight: 700;
                 font-size: 1.2rem;
                 width: 90%;
+                @media screen and (max-width: $tablet) {
+                    font-size: 1.5rem;
+                }
             }
             .book-author {
                 font-size: 1rem;
                 font-style: italic;
+                @media screen and (max-width: $tablet) {
+                    font-size: 1.2rem;
+                }
             }
             .book-bookmark {
                 position: absolute;

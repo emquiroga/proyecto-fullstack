@@ -1,6 +1,7 @@
 //Buttons
 .buttons-wrapper {
     width: 90%;
+    max-width: 600px;
     margin: 1rem auto;
     display: flex;
     flex-flow: row wrap;
@@ -10,6 +11,7 @@
 .blue-btn {
     display: block;
     width: 90%;
+    max-width: 350px;
     padding: .375rem .75rem;
     margin: auto;
     color: white;
@@ -31,9 +33,10 @@
 }
 .icon-btn {
     width: 40px;
-    height: 40px;
+    height: auto;
+    padding: .375rem;
     display: block;
-    margin-left: auto;
+    margin: auto;
     border: none;
     border-radius: 50%;
     background-color: $bg-blue;
@@ -58,4 +61,18 @@
             }
         }
     }
+}
+//Sizing
+.absolute-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.max-650 {
+    max-width: 650px !important;
+    margin: auto !important;
+}
+.max-100-input {
+    max-width: 100% !important;
 }

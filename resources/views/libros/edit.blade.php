@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <div class="alert alert-warning" role="alert">
-            {{$libro->id}}
-        </div>
+    <div class="container max-650">
         <form action="{{url('/libros/' . $libro->id)}}" method="POST" enctype="multipart/form-data">
             <div class="row container-fluid justify-content-center">
                 @csrf

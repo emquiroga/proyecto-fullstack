@@ -17,7 +17,7 @@
             align-items: center;
             gap: 3px;
 
-            @media screen and (min-width: $large) {
+            @media screen and (min-width: $tablet) {
                   visibility: hidden;
               }
 
@@ -34,7 +34,7 @@
         align-items: flex-end;
     }
     .dropdown {
-        display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;

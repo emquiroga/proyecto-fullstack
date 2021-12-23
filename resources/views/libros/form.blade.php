@@ -21,7 +21,7 @@
     @isset($libro)
     <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->foto }}" alt={{$libro->titulo . " / " . $libro->autor}}>
     @endisset
-    <input class="mt-3" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
+    <input class="mt-3 max-100-input" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
 </div>
 <div class="form-group">
     <label for="enlace" class="">Enlace </label>
@@ -63,5 +63,5 @@
     <label for="apa" class="">Cita formato APA</label>
     <input class="form-control" type="text" name="apa" id="apa" value="{{isset($libro) ? $libro->apa : old('apa')}}">
 </div>
-<button class="btn btn-primary mt-3 w-100">{{$modo}} Entrada</button>
+<button class="blue-btn mt-3 mb-3">{{$modo}} Entrada</button>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="form-container">
+    <div class="form-container absolute-mid">
         <h1>Iniciar Sesión</h1>
         <span class="user-icon">
             <svg xmlns="http://www.w3.org/2000/svg"  fill="#7879F1" class="bi bi-person" viewBox="0 0 16 16">
@@ -19,12 +19,12 @@
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror    
+                    @enderror
             </div>
-    
+
             <div class="row mb-3">
-                <label for="password" class="col-md-4 col-form-label text-md-right"></label>    
-                <input placeholder="Ingresa tu contraseña" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">    
+                <label for="password" class="col-md-4 col-form-label text-md-right"></label>
+                <input placeholder="Ingresa tu contraseña" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                 @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="row mb-3">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="blue-btn">
                         {{ __('Login') }}
                     </button>
             </div>
@@ -49,7 +49,7 @@
                 <a class="nav-link" href="{{ route('password.request') }}">
                     Olvidé mi contraseña
                 </a>
-            @endif 
+            @endif
     </div>
 </div>
 @endsection

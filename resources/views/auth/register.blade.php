@@ -58,7 +58,7 @@
             </div>
 
             <div class="row mb-3">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="blue-btn">
                         Registrarse
                     </button>
             </div>

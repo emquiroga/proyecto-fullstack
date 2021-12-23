@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container max-650">
+        <form action="{{url('/libros')}}" method="POST" enctype="multipart/form-data">
+            <div class="row container-fluid justify-content-center">
+                @csrf
+                @include('libros.form',['modo'=>'Crear'])
+            </div>
+        </form>
     </div>
-    <form action="{{url('/libros')}}" method="POST" enctype="multipart/form-data">
-        <div class="row container-fluid justify-content-center">
-            @csrf
-            @include('libros.form',['modo'=>'Crear'])
-        </div>
-    </form>
 @endsection
