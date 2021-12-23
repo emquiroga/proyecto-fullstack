@@ -1,0 +1,57 @@
+//Buttons
+.buttons-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.blue-btn {
+    display: block;
+    width: 90%;
+    padding: .375rem .75rem;
+    margin: auto;
+    color: white;
+    background-color: $bg-blue;
+    border: 1px inset $bg-blue;
+    border-radius: 1.25rem;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $bg-lightBlue;
+        border: 1px inset black;
+        color: black;
+    }
+}
+.back-btn {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    border: none;
+    border-radius: 50%;
+    background-color: $bg-blue;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+
+    svg{
+        width: 100%;
+        height: auto;
+
+        path {
+            fill: $bg-lightBlue;
+        }
+    }
+
+    &:hover {
+        background-color: $bg-lightBlue;
+
+        svg {
+            path {
+                fill: $bg-blue;
+            }
+        }
+    }
+}

@@ -1,7 +1,6 @@
 //INDEX VIEW
 .title-row {
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -20,19 +19,17 @@
     }
 }
 .books-container {
-    width: auto;
-    height: 250px;
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     align-items: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    gap: 1rem;
 
     .card-container {
         min-width: 100px;
         max-width: 100px;
-        height: 230px;
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
@@ -42,19 +39,95 @@
         p {
             text-align: center;
         }
-        .rating {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
+    }
+}
+.rating {
+    max-width: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 
-            svg {
-                width: 15px;
+    svg {
+        width: 15px;
 
-                path {
-                    fill: $bg-blue;
-                }
-            }
+        path {
+            fill: $bg-blue;
         }
     }
 }
+//SHOW VIEW
+.book-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    .book-header {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        .col-left,
+        .col-right {
+            width: 45%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .col-right {
+            position: relative;
+            .book-title {
+                font-weight: 700;
+                font-size: 1.2rem;
+                width: 90%;
+            }
+            .book-author {
+                font-size: 1rem;
+                font-style: italic;
+            }
+            .book-bookmark {
+                position: absolute;
+                top: 5px;
+                right: -10px;
+                border: none;
+                background: none;
+            }
+        }
+    }
+    .book-stats {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-around;
+
+        .book-rating,
+        .book-type,
+        .book-pages {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+    .book-about {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 90%;
+        margin: auto;
+
+        .about-title {
+            font-weight: 700;
+        }
+    }
+}
+
 
