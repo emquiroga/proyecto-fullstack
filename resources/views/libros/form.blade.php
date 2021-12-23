@@ -15,12 +15,8 @@
     <label for="autor" class="">Autor/a</label>
     <input class="form-control" type="text" name="autor" id="apellido" value="{{isset($libro) ? $libro->autor : old('autor') }}">
 </div>
-<div class="form-group">
-    <label for="portada" class="">Portada </label>
-    <br>
-    @isset($libro)
-    <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->foto }}" alt={{$libro->titulo . " / " . $libro->autor}}>
-    @endisset
+<div class="form-group mb-3">
+    <label for="portada" class="">Portada</label>
     <input class="mt-3 max-100-input" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
 </div>
 <div class="form-group">

@@ -11300,6 +11300,10 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 0.25rem #E5E6FF !important;
 }
 
+label {
+  font-weight: 700;
+}
+
 .buttons-wrapper {
   width: 90%;
   max-width: 600px;
