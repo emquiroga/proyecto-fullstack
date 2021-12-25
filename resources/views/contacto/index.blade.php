@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container max-650">
          @if(session()->has('mensaje'))
             <div class="alert alert-success">
                 {{ session()->get('mensaje') }}
@@ -30,7 +30,7 @@
                 <label for="mensaje" class="form-label">Tu mensaje</label>
                 <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="blue-btn">Enviar</button>
         </form>
     </div>
 @endsection
