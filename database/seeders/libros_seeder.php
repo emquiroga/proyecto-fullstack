@@ -26,13 +26,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780439362139',
             'fecha_publicacion' => '1997',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "English",
             'valoracion' => '4',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Philosopher s Stone. New York :Arthur A. Levine Books.",
+            'formato' => 'PDF',
+            'paginas' => 240,
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
         ]);
 
 
@@ -46,13 +48,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780439420105',
             'fecha_publicacion' => '1998',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "Spanish",
             'valoracion' => '4',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Chamber of Secrets. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 251,
+            'formato' => 'PDF'
         ]);
 
         \DB::table('libros')->insert([
@@ -65,13 +69,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780545582933',
             'fecha_publicacion' => '1999',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "Spanish",
             'valoracion' => '4',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Prisoner of Azkaban. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 317,
+            'formato' => 'PDF'
         ]);
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Goblet of Fire.",
@@ -83,13 +89,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9781338299175',
             'fecha_publicacion' => '2000',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "Spanish",
             'valoracion' => '5',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Goblet of Fire. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 636,
+            'formato' => 'PDF'
         ]);
         \DB::table('libros')->insert([
             'titulo' => "Harry Potter and the Order of the Phoenix.",
@@ -101,13 +109,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780545582971',
             'fecha_publicacion' => '2003',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "English",
             'valoracion' => '5',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Order of the Phoenix. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 901,
+            'formato' => 'PDF'
         ]);
 
         \DB::table('libros')->insert([
@@ -120,13 +130,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780439785969',
             'fecha_publicacion' => '2005',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "English",
             'valoracion' => '5',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Half-Blood Prince. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 607,
+            'formato' => 'PDF'
         ]);
 
         \DB::table('libros')->insert([
@@ -139,13 +151,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9781644732137',
             'fecha_publicacion' => '2007',
-            'categoria' => 'Novela/ Literatura fantástica /literatura juvenil',
             'idioma' => "English",
             'valoracion' => '5',
             'apa' => "Rowling, J. K., author. (1998). Harry Potter and the Deathly Hallows. New York :Arthur A. Levine Books.",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 607,
+            'formato' => 'PDF'
         ]);
         \DB::table('libros')->insert([
             'titulo' => "The Fellowship of the Ring.",
@@ -157,13 +171,15 @@ class libros_seeder extends Seeder
             'edicion' => $faker->randomDigit(),
             'isbn' => '9780261102385',
             'fecha_publicacion' => '1954',
-            'categoria' => 'Fantasy',
             'idioma' => "English",
             'valoracion' => '5',
             'apa' => "Tolkien, J. R. R. 1991. The Lord of the Rings. London, England: HarperCollins..",
             'created_at' =>date('Y-m-d H:m:s'),
             'updated_at' =>date('Y-m-d H:m:s'),
-            'idUser' => $faker->numberBetween($min = 1, $max = 10)
+            'idUser' => $faker->numberBetween($min = 1, $max = 10),
+            'idCategoria' => 5,
+            'paginas' => 423,
+            'formato' => 'PDF'
         ]);
     }
 

@@ -12,4 +12,11 @@ class Libros extends Model
     public function users(){
         return $this->belongsTo(User::class,'idUser');
     }
+    public function categorias(){
+        return $this->belongsTo(Categoria::class,'idCategoria');
+    }
+
+    public function usersFav(){
+        return $this->belongsToMany(User::class,'favoritos');
+    }
 }
