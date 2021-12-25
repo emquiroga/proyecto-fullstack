@@ -30,6 +30,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @if (!Auth::guest())
+        @include ('partials.footer')
+        @endif
     </div>
 </body>
 </html>

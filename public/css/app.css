@@ -11310,6 +11310,13 @@ ul {
   list-style: none;
 }
 
+hr {
+  width: 80%;
+  max-width: 340px;
+  height: 2px;
+  margin: auto;
+}
+
 .buttons-wrapper {
   width: 90%;
   max-width: 600px;
@@ -11453,6 +11460,50 @@ ul {
   color: black !important;
 }
 
+footer {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E6FF;
+}
+@media screen and (min-width: 1024px) {
+  footer .top-div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+  footer .top-div ul {
+    margin: 2rem 0;
+    gap: 0;
+  }
+}
+footer .top-div h3, footer .top-div .h3 {
+  margin: 1rem 0;
+  padding: 0.375rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  background-color: #7879F1;
+}
+footer .top-div ul {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+footer .bottom-div p {
+  color: #7879F1;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 .form-container .user-icon {
   width: 75px;
   height: 75px;
@@ -11460,12 +11511,6 @@ ul {
   padding: 1rem;
   background-color: #E5E6FF;
   border-radius: 50%;
-}
-.form-container hr {
-  width: 80%;
-  max-width: 340px;
-  height: 2px;
-  margin: auto;
 }
 
 .title-row {
