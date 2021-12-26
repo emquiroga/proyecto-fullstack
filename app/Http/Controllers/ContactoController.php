@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailContacto;
+
 class ContactoController extends Controller
 {
     /**
@@ -38,22 +41,22 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        $validations = [
-            'nombre' => 'required',
-            'email' => 'required|email',
-            'mensaje' => 'required|min:30|max:250',
-        ];
-        $mensaje = [
+        $message = request()->validate(
+            [
+                'nombre' => 'required',
+                'email' => 'required|email',
+                'mensaje' => 'required|min:10|max:450',
+            ],
+             [
             'required' => 'El campo :attribute es requerido',
             'min' => 'El campo :attribute debe tener al menos :min caracteres',
-        ];
+            ]
+            );
 
-        $this->validate($request, $validations, $mensaje);
-
-        $datosContacto = request()->except('_token');
-
-        Contacto::insert($datosContacto);
-
+        $emails = ["bscarso@gmail.com","marcenico1992@gmail.com","jnrivadeneira@gmail.com","emiliano.quiroga093@gmail.com","sebastiangalvan.ar@gmail.com"];
+        Mail::mailer()
+                ->to($emails)
+                ->queue(new MailContacto($message));
         return redirect('/contacto')->with('mensaje', 'Mensaje enviado correctamente');
     }
 
