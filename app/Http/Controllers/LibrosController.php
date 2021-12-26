@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Favoritos;
 use App\Models\Libros;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-
 class LibrosController extends Controller
 {
     /**
@@ -30,7 +31,7 @@ class LibrosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         $categorias = Categoria::all();
         $params = [
             'title' => 'Ingreso de Libro',
@@ -89,10 +90,17 @@ class LibrosController extends Controller
      */
     public function show($id)
     {
+        $estado = false;
+        $userId = Auth::id();
         $libro = Libros::findOrFail($id);
+        $fav = Favoritos::where('user_id', $userId)->where('libros_id', $id)->first();
+        if ($fav) {
+            $estado = true;
+        }
         $params = [
             'title' => 'Detalle del libro',
-            'libro' => $libro
+            'libro' => $libro,
+            'estado' => $estado
         ];
         return view('libros.show', $params);
     }
@@ -176,5 +184,20 @@ class LibrosController extends Controller
         }
         Libros::destroy($id);
         return redirect('libros')->with('mensaje', 'Libro eliminado con éxito de tu biblioteca');
+    }
+
+    public function search(Request $request){
+
+        $libro =  $request->input('libro');
+        $libros = DB::table('libros')->where('titulo','LIKE','%'.$libro.'%')->get();
+
+        if ($libros) {
+            $params = [
+                'title' => 'Resultados de Busqueda',
+                'libros' => $libros
+            ];
+            return view('libros.index', $params);
+        }
+        return view('libros.not_found');
     }
 }
