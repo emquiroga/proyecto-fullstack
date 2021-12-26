@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Libros;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
 
 class LibrosController extends Controller
 {
@@ -30,8 +31,10 @@ class LibrosController extends Controller
      */
     public function create()
     {
+        $categorias = Categoria::all();
         $params = [
-            'title' => 'Ingreso de Libro'
+            'title' => 'Ingreso de Libro',
+            'categorias' => $categorias
         ];
         return view('libros.create', $params);
     }
@@ -54,10 +57,12 @@ class LibrosController extends Controller
             'edicion' => 'required',
             'isbn' => 'required',
             'fecha_publicacion' => 'required',
-            'categoria' => 'required',
             'idioma' => 'required',
             'valoracion' => 'required',
+            'paginas' => 'required',
             'apa' => 'required',
+            'formato' => 'required',
+            'idCategoria' => 'required',
         ];
         $mensaje = [
             'required' => 'El campo :attribute es requerido',
@@ -69,6 +74,7 @@ class LibrosController extends Controller
 
         if($request->hasFile('portada')){
             $libro['portada'] = $request->file('portada')->store('uploads', 'public');
+            $libro['idUser'] = Auth::id();
         }
         Libros::insert($libro);
 
