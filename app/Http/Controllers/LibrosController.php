@@ -196,7 +196,7 @@ class LibrosController extends Controller
                 'title' => 'Resultados de Busqueda',
                 'libros' => $libros
             ];
-            return view('libros.index', $params);
+            return view('libros.busqueda', $params);
         }
         return view('libros.not_found');
     }
