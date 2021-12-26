@@ -24,12 +24,25 @@ class CreateLibrosTable extends Migration
             $table->string('edicion');
             $table->string('isbn');
             $table->string('fecha_publicacion');
-            $table->string('categoria');
             $table->string('idioma');
             $table->string('valoracion');
             $table->string('apa');
+            $table->string('formato');
+            $table->integer('paginas');
 
             $table->timestamps();
+
+            $table->foreignId('idUser')
+                ->nullable()
+                ->constrained('users')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
+
+            $table->foreignId('idCategoria')
+                ->nullable()
+                ->constrained('categorias')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
         });
     }
 

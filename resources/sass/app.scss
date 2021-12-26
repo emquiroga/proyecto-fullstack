@@ -1,11 +1,22 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+
+//Config & Utils
+@import 'globals';
+@import 'utils';
+
+//Components
+@import 'components/forms';
+@import 'components/navbar';
+@import 'components/footer';
 
 //Views
-@import "views/libros";
+@import 'views/login';
+@import 'views/libros';
+@import 'views/home';

@@ -1,3 +1,149 @@
-.red-test {
-    background-color: red;
+//INDEX VIEW
+.title-row {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        font-weight: 700;
+        margin: auto;
+        padding: 0;
+    }
 }
+.books-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .card-container {
+        min-width: 100px;
+        max-width: 100px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+
+        p {
+            text-align: center;
+        }
+
+        @media screen and (min-width: $tablet) {
+            min-width: 120px;
+            max-width: 120px;
+        }
+        @media screen and (min-width: $large) {
+            min-width: 200px;
+            max-width: 200px;
+        }
+    }
+}
+.rating {
+    max-width: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    svg {
+        width: 15px;
+
+        path {
+            fill: $bg-blue;
+        }
+    }
+}
+//SHOW VIEW
+.book-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    .book-header {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        .col-left,
+        .col-right {
+            width: 45%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .col-right {
+            position: relative;
+            .book-title {
+                font-weight: 700;
+                font-size: 1.2rem;
+                width: 90%;
+                @media screen and (max-width: $tablet) {
+                    font-size: 1.5rem;
+                }
+            }
+            .book-author {
+                font-size: 1rem;
+                font-style: italic;
+                @media screen and (max-width: $tablet) {
+                    font-size: 1.2rem;
+                }
+            }
+            .book-bookmark {
+                position: absolute;
+                top: 5px;
+                right: -10px;
+                border: none;
+                background: none;
+            }
+        }
+    }
+    .book-stats {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-around;
+
+        .book-rating,
+        .book-type,
+        .book-pages {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+    .book-about {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 90%;
+        margin: auto;
+
+        .about-title {
+            font-weight: 700;
+        }
+    }
+}
+
+

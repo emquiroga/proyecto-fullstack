@@ -15,13 +15,9 @@
     <label for="autor" class="">Autor/a</label>
     <input class="form-control" type="text" name="autor" id="apellido" value="{{isset($libro) ? $libro->autor : old('autor') }}">
 </div>
-<div class="form-group">
-    <label for="portada" class="">Portada </label>
-    <br>
-    @isset($libro)
-    <img class="img-fluid img-thumbnail" src="{{ asset('storage') . '/' . $libro->foto }}" alt={{$libro->titulo . " / " . $libro->autor}}>
-    @endisset
-    <input class="mt-3" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
+<div class="form-group mb-3">
+    <label for="portada" class="">Portada</label>
+    <input class="mt-3 max-100-input" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
 </div>
 <div class="form-group">
     <label for="enlace" class="">Enlace </label>
@@ -57,11 +53,11 @@
 </div>
 <div class="form-group">
     <label for="valoracion" class="">Valoración </label>
-    <input class="form-control" type="text" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
+    <input class="form-control" type="number" min="1" max="5" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
 </div>
 <div class="form-group">
     <label for="apa" class="">Cita formato APA</label>
     <input class="form-control" type="text" name="apa" id="apa" value="{{isset($libro) ? $libro->apa : old('apa')}}">
 </div>
-<button class="btn btn-primary mt-3 w-100">{{$modo}} Entrada</button>
+<button class="blue-btn mt-3 mb-3">{{$modo}} Entrada</button>
 
