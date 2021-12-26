@@ -5,11 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\ContactoController;
-use App\Http\Controllers\Favoritos;
 use App\Http\Controllers\FavoritosController;
 use App\Http\Controllers\libros_categorias_controller;
 use App\Http\Controllers\user_libros_controller;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('libros', LibrosController::class)->middleware('auth');
+    Route::post('/libros/busqueda', [LibrosController::class, 'search'])->name('libro');
     Route::resource('contacto', ContactoController::class);
     Route::get('/favoritos',[FavoritosController::class, 'index']);
     Route::get('/favoritos/user/{id}',[FavoritosController::class, 'favUser']);
