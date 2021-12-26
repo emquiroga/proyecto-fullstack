@@ -81,7 +81,7 @@
                   </button>
                 </h2>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body"><strong>{{ $libro->categoria }}</strong></div>
+                  <div class="accordion-body"><strong>{{ $libro->categorias->descripcion }}</strong></div>
                 </div>
               </div>
           </div>

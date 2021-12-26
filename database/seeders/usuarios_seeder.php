@@ -18,7 +18,6 @@ class usuarios_seeder extends Seeder
         for ($i=0; $i < 10; $i++) {
               \DB::table("users")->insert(
                     array(
-                        //   'id' => $faker->auto,
                           'name'  => $faker->firstName($gender = 'male'|'female'),
                           'email'  => $faker->freeEmail(),
                           'password'  => $faker->password(),
@@ -26,6 +25,14 @@ class usuarios_seeder extends Seeder
                           'updated_at' => date('Y-m-d H:m:s')
                     )
               );
-        }
+        };
+        \DB::table("users")->insert([
+                  'name'  => 'Juan',
+                  'email'  => 'juan@gmail.com',
+                  'password'  => '$2y$10$tY5rOebMQnpRqkqO25fwnutDDX8nW7st8qIez3N7GLxmvPx4xjN/O',
+                  'created_at' => date('Y-m-d H:m:s'),
+                  'updated_at' => date('Y-m-d H:m:s')
+        ]);
+
     }
 }
