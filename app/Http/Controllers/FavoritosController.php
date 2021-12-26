@@ -23,14 +23,15 @@ class FavoritosController extends Controller
     public function store($idLibro)
     {
         $userId = Auth::id();
-        $fav = Favoritos::find()->where('user_id','=', $userId  and 'libros_id' .'='. $idLibro);
+        $fav = Favoritos::where('user_id', $userId)->where('libros_id', $idLibro )->first();
 
-        if ($fav > 0) {
-            DB::table('users')->where('id', '=', $fav->id)->delete();
+        if (!$fav) {
+           Favoritos::insert(['user_id' => $userId, 'libros_id' => $idLibro]);
         }else{
-            Favoritos::insert(['user_id' => $userId, 'libros_id' => $idLibro]);
-        }
-        return redirect('/libros'.'/'.$idLibro);
+            DB::table('favoritos')->where('id', '=', $fav->id)->delete();
+        } 
+
+        return back()->withInput();
 
     }
 
