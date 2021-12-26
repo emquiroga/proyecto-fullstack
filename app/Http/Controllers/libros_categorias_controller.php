@@ -11,7 +11,7 @@ class libros_categorias_controller extends Controller
 {
     public function index($id){
         $libros = Libros::all()->where('idCategoria', '=', $id);
-        // $libros = Libros::all();
-        return view('librosCat',compact('libros'));
+        $categoria = Categoria::find($id);
+        return view('categorias.libros_por_categoria',compact('libros', 'categoria'));
     }
 }

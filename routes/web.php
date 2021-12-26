@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\ContactoController;
-use App\Http\Controllers\Favoritos;
+use App\Http\Controllers\FavoritosController;
 use App\Http\Controllers\libros_categorias_controller;
+use App\Http\Controllers\user_libros_controller;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +22,20 @@ use App\Http\Controllers\libros_categorias_controller;
 */
 
 Auth::routes();
-Route::get('/categoria/{id}',[libros_categorias_controller::class, 'index']);
-Route::get('/categorias',[Categorias::class, 'getAll']);
 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('libros', LibrosController::class)->middleware('auth');
+    Route::post('/libros/busqueda', [LibrosController::class, 'search'])->name('libro');
     Route::resource('contacto', ContactoController::class);
-    Route::get('/favoritos',[Favoritos::class, 'index']);
+    Route::get('/favoritos',[FavoritosController::class, 'index']);
+    Route::get('/favoritos/user/{id}',[FavoritosController::class, 'favUser']);
+    Route::get('/favoritos/{id}',[FavoritosController::class, 'store']);
+    Route::get('/perfil',[user_libros_controller::class, 'miPerfil']);
+    Route::get('/perfil/{id}',[user_libros_controller::class, 'perfilVisitor']);
+    Route::get('/categoria/{id}',[libros_categorias_controller::class, 'index']);
+    Route::get('/categorias',[Categorias::class, 'getAll']);
+
 });

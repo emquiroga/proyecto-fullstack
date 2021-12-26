@@ -44,10 +44,6 @@
     <input class="form-control" type="text" name="fecha_publicacion" id="fecha_publicacion" value="{{isset($libro) ? $libro->fecha_publicacion : old('fecha_publicacion')}}">
 </div>
 <div class="form-group">
-    <label for="categoria" class="">Categoria </label>
-    <input class="form-control" type="text" name="categoria" id="categoria" value="{{isset($libro) ? $libro->categoria : old('categoria')}}">
-</div>
-<div class="form-group">
     <label for="idioma" class="">Idioma </label>
     <input class="form-control" type="text" name="idioma" id="idioma" value="{{isset($libro) ? $libro->idioma : old('idioma')}}">
 </div>
@@ -56,8 +52,37 @@
     <input class="form-control" type="number" min="1" max="5" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
 </div>
 <div class="form-group">
+    <label for="apa" class="">Paginas</label>
+    <input class="form-control" type="number" min=1 name="paginas" id="paginas" value="{{isset($libro) ? $libro->paginas : old('paginas')}}">
+</div>
+<div class="form-group">
     <label for="apa" class="">Cita formato APA</label>
     <input class="form-control" type="text" name="apa" id="apa" value="{{isset($libro) ? $libro->apa : old('apa')}}">
 </div>
+<div class="form-group">
+    <label for="categoria" class="">Formato</label>
+    <div>
+        <select name="formato" id="formato" class="form-control">
+            <option>Seleccionar Formato</option>
+            <option value="PDF">PDF</option>
+            <option value="EPUB">EPUB</option>
+            <option value="MOVI">MOVI</option>
+            <option value="RTF">RTF</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label for="categoria" class="">Categoria </label>
+    <div>
+        <select name="idCategoria" id="idCategoria" class="form-control">
+            <option>Seleccionar Categoria </option>
+                @foreach ($categorias as $categoria)
+                    <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}"
+                >{{ $categoria->descripcion }}</option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
 <button class="blue-btn mt-3 mb-3">{{$modo}} Entrada</button>
 

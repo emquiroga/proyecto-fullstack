@@ -11317,6 +11317,14 @@ hr {
   margin: auto;
 }
 
+ion-icon {
+  color: #7879F1;
+}
+
+ion-icon {
+  font-size: 40px;
+}
+
 .buttons-wrapper {
   width: 90%;
   max-width: 600px;

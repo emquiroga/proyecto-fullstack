@@ -38,15 +38,15 @@ class favoritos extends Seeder
             'libros_id'  => 6
         ]);
         \DB::table('favoritos')->insert([
-            'user_id'  => 11,
+            'user_id'  => 3,
             'libros_id'  => 5
         ]);
         \DB::table('favoritos')->insert([
-            'user_id'  => 11,
+            'user_id'  => 3,
             'libros_id'  => 8
         ]);
         \DB::table('favoritos')->insert([
-            'user_id'  => 11,
+            'user_id'  => 3,
             'libros_id'  => 1
         ]);
     }

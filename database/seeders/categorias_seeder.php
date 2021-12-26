@@ -15,68 +15,53 @@ class categorias_seeder extends Seeder
     {
 
               \DB::table('categorias')->insert(
-                          ['descripcion'  => 'Arte / Recreacion',
-                          'icono' => 'icons/VectorArte.png']
+                          ['descripcion'  => 'Arte / Recreacion']
+
               );
               \DB::table("categorias")->insert(
-                        [  'descripcion'  => 'Autoayuda',
-                        'icono' => 'icons/VectorAutoAyuda.png']
+                        [  'descripcion'  => 'Autoayuda']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion' => 'Biografias / Memorias',
-                          'icono' => 'icons/VectorBiografias.png']
+                          ['descripcion' => 'Biografias / Memorias']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion' => 'Ciencia',
-                          'icono' => 'icons/VectorCiencia.png']
+                          ['descripcion' => 'Ciencia']
               );
               \DB::table("categorias")->insert(
-                         [ 'descripcion'  => 'Ciencia Finccion / Fantasía',
-                         'icono' => 'icons/VectorCienciaFiccion.png']
+                         [ 'descripcion'  => 'Ciencia Finccion / Fantasía']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Computacion / Tecnologia',
-                          'icono' => 'icons/VectorComputacion.png']
+                          ['descripcion'  => 'Computacion / Tecnologia']
               );
               \DB::table("categorias")->insert(
-                         [ 'descripcion'  => 'Ficción / Literatura',
-                         'icono' => 'icons/VectorFiccion.png']
+                         [ 'descripcion'  => 'Ficción / Literatura']
               );
               \DB::table("categorias")->insert(
-                         ['descripcion'  => 'Filosofia',
-                         'icono' => 'icons/VectorFilosofia.png']
+                         ['descripcion'  => 'Filosofia']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Finanzas / Inxersión',
-                          'icono' => 'icons/VectorFinanzas.png']
+                          ['descripcion'  => 'Finanzas / Inversión']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Historia',
-                          'icono' => 'icons/VectorHistoria.png']
+                          ['descripcion'  => 'Historia']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Libros Infantiles',
-                          'icono' => 'icons/VectorInfantiles.png']
+                          ['descripcion'  => 'Libros Infantiles']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Misterio / Suspenso',
-                          'icono' => 'icons/VectorMisterio.png']
+                          ['descripcion'  => 'Misterio / Suspenso']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Politica',
-                          'icono' => 'icons/VectorPolitica.png']
+                          ['descripcion'  => 'Politica']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Religión / Espiritualidad',
-                          'icono' => 'icons/VectorReligion.png']
+                          ['descripcion'  => 'Religión / Espiritualidad']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Romance',
-                          'icono' => 'icons/VectorRomance.png']
+                          ['descripcion'  => 'Romance']
               );
               \DB::table("categorias")->insert(
-                          ['descripcion'  => 'Salud Cuerpo mente',
-                          'icono' => 'icons/VectorSalud.png']
+                          ['descripcion'  => 'Salud/Cuerpo/mente']
               );
     }
 }
