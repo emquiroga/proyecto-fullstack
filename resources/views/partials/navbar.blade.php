@@ -24,6 +24,13 @@
                 <li class="nav-item">
                     <a href={{url('/perfil')}} class="nav-link">Mi Perfil</a>
                 </li>
+                <li>
+                <form class="form-inline" method="POST" action="{{ url('/libros/busqueda') }} ">
+                {{csrf_field()}}
+                    <input id="libro" name="libro" class="form-control mr-sm-2" type="search" placeholder="Buscar Libro" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                 </form>
+                </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Opciones
@@ -42,11 +49,7 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline" method="POST" action="{{ url('/libros/busqueda') }} ">
-                {{csrf_field()}}
-                <input id="libro" name="libro" class="form-control mr-sm-2" type="search" placeholder="Buscar Libro" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+  
         </div>
     </div>
 </nav>
