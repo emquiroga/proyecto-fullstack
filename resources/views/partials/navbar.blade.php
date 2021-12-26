@@ -15,6 +15,12 @@
                 <li class="nav-item">
                     <a href={{url('/contacto')}} class="nav-link">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a href={{url('/favoritos')}} class="nav-link">Favoritos</a>
+                </li>
+                <li class="nav-item">
+                    <a href={{url('/categorias')}} class="nav-link">Categorias</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Perfil
