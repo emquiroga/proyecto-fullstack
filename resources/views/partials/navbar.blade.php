@@ -34,7 +34,7 @@
                 <li class="nav-item">
                     <a href={{url('/categorias')}} class="nav-link">Categorias</a>
                 </li>
-<<<<<<< HEAD
+
                 <!-- <li>
                 <form style="display:flex" method="POST" action="{{ url('/libros/busqueda') }} ">
                 {{csrf_field()}}
@@ -42,11 +42,10 @@
                     <div><button class="btn btn-outline-success" type="submit">Buscar</button></div>
                  </form>
                 </li> -->
-=======
+
                 <li class="nav-item">
                     <a href={{url('/perfil')}} class="nav-link">Mi Perfil</a>
                 </li>
->>>>>>> main
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Opciones
