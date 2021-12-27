@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Categorias;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\FavoritosController;
 use App\Http\Controllers\libros_categorias_controller;
 use App\Http\Controllers\user_libros_controller;
 use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +35,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('contacto', ContactoController::class);
     Route::get('/favoritos',[FavoritosController::class, 'index']);
     Route::get('/favoritos/user/{id}',[FavoritosController::class, 'favUser']);
-    Route::get('/favoritos/{id}',[FavoritosController::class, 'store']);
+    Route::get('/favoritos/{id}',[FavoritosController::class, 'fav_noFav']);
     Route::get('/perfil',[user_libros_controller::class, 'miPerfil']);
+    Route::post('/perfil',[user_libros_controller::class, 'update']);
     Route::get('/perfil/{id}',[user_libros_controller::class, 'perfilVisitor']);
     Route::get('/categoria/{id}',[libros_categorias_controller::class, 'index']);
     Route::get('/categorias',[Categorias::class, 'getAll']);
+    Route::get('/user/reset_password',[ResetPasswordController::class, 'showResetForm']);
+    Route::post('reset_password', [AccountsController::class,'resetPassword']);
 
 });
