@@ -14,13 +14,25 @@
         <h3>Hola {{ $user->first_name }}</h3>
     </div>
     <div>
-        <img src="{{ asset('storage').'/'.$user->profile_picture}}" style="width: 10%;">
+        <div>     
+            <img src="{{ asset('storage').'/'.$user->profile_picture}}" style="width: 9em; border-radius: 50%;">
+            <a href="#" id="update_image"><ion-icon name="camera-reverse" size="large" color="#333"></ion-icon></a>
+            <div hidden id="form_update_image">
+                <form enctype="multipart/form-data" action="{{ url('/perfil') }}" method="POST">
+                    <label>Cambiar Imagen</label>
+                    <input type="file" name="profile_picture" id="profile_picture">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="submit" class="btn-sm" value="Subir">
+                </form>
+            </div>
+
+        </div>        
     </div>
     <div>
         <p>Nombre: {{ $user->first_name }}</p>
         <p>Apellido: {{ $user->last_name }}</p>
         <p>Email: {{ $user->email }}</p>
-        <p>Contraseña: *******************</p>
+        <a href="{{ url('/user/reset_password') }}" style="background: #7FD4FF; color:#fff ">Cambiar Contraseña</a>
     </div>
     <div>
 
@@ -29,11 +41,14 @@
         <h5>Tus Libros</h5>
         @foreach($libros as $libro)
         <div>
-            <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
             <a href="{{ url('libros/' . $libro->id) }}">
+                <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
                 <p>{{ $libro->titulo }}</p>
             </a>
-            <p>{{ $libro->categorias->descripcion }}</p>
+            <a href="{{ url('categoria'.'/'.$libro->categorias->id) }}">
+                <p>{{ $libro->categorias->descripcion }}</p>
+            </a>
+            
         </div>
         @endforeach
         @else
@@ -44,5 +59,7 @@
     </div>
 
 </div>
+
+<script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
 
 @endsection

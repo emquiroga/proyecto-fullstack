@@ -75,8 +75,8 @@ class LibrosController extends Controller
 
         if($request->hasFile('portada')){
             $libro['portada'] = $request->file('portada')->store('uploads', 'public');
-            $libro['idUser'] = Auth::id();
         }
+        $libro['idUser'] = Auth::id();
         Libros::insert($libro);
 
         return redirect('libros')->with('mensaje', 'Libro agregado con exito');
@@ -113,10 +113,12 @@ class LibrosController extends Controller
      */
     public function edit(Libros $libros, $id)
     {
+        $categorias = Categoria::all();
         $libro = Libros::findOrFail($id);
         $params = [
             'title' => 'Editar datos',
-            'libro' => $libro
+            'libro' => $libro,
+            'categorias' => $categorias
         ];
         return view('libros.edit', $params, compact('libro'));
     }
@@ -140,10 +142,12 @@ class LibrosController extends Controller
             'edicion' => 'required',
             'isbn' => 'required',
             'fecha_publicacion' => 'required',
-            'categoria' => 'required',
+            'idCategoria' => 'required',
             'idioma' => 'required',
             'valoracion' => 'required',
             'apa' => 'required',
+            'paginas' => 'required',
+            'formato' => 'required',
         ];
         $mensaje = [
             'required' => 'El campo :attribute es requerido',

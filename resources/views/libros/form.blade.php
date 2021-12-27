@@ -2,13 +2,13 @@
 <div class="alert alert-danger">
     <ul>
         @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
+        <li>{{$error}}</li>
         @endforeach
     </ul>
 </div>
 @endif
 <div class="form-group">
-    <label for="titulo"class="" >Título del libro</label>
+    <label for="titulo" class="">Título del libro</label>
     <input class="form-control" type="text" name="titulo" id="titulo" value="{{isset($libro) ? $libro->titulo : old('titulo') }}">
 </div>
 <div class="form-group">
@@ -74,15 +74,14 @@
 <div class="form-group">
     <label for="categoria" class="">Categoria</label>
     <div>
-        <select name="categoria" id="categoria" class="form-control">
-            <option disabled>Seleccionar Categoria </option>
-                @foreach ($categorias as $categoria)
-                    <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}"
-                >{{ $categoria->descripcion }}</option>
+        <select name="idCategoria" id="idCategoria" class="form-control">
+            <option>Seleccionar Categoria </option>
+            @foreach ($categorias as $categoria)
+            <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}">{{ $categoria->descripcion }}</option>
             @endforeach
         </select>
     </div>
 </div>
 
-<button class="blue-btn mt-3 mb-3">{{$modo}} Entrada</button>
-
+<button class="blue-btn mt-3 mb-3">{{$modo}} Libro</button>
+<a class="blue-btn mb-3 text-center" href="{{ url('libros/') }}">Cancelar</a>

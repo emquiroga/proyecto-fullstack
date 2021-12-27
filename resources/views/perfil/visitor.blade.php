@@ -10,7 +10,6 @@
         </a>
     </button>
     <div>
-        <h3>Hola {{ $user->first_name }}</h3>
     </div>
     <div>
         <img src="{{ asset('storage').'/'.$user->profile_picture}}" style="width: 10%;">
@@ -26,11 +25,13 @@
         <h5>Libros de {{ $user->first_name }}: </h5>
         @foreach($libros as $libro)
         <div>
-            <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
             <a href="{{ url('libros/' . $libro->id) }}">
+                <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
                 <p>{{ $libro->titulo }}</p>
             </a>
-            <p>{{ $libro->categorias->descripcion }}</p>
+            <a href="{{ url('categoria'.'/'.$libro->categorias->id) }}">
+                <p>{{ $libro->categorias->descripcion }}</p>
+            </a>
         </div>
         @endforeach
         @else
