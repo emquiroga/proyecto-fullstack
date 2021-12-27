@@ -46,7 +46,7 @@
         </div>
       </div>
       <p class="book-editorial"> <i>by:</i> <a href="{{ url('perfil/' . $libro->users->id) }}">@<span>{{ $libro->users->first_name }}</span></a></p>
-    <button class="blue-btn"><a target="_blank" href="{{url('//' . $libro->enlace)}}">Leer</a></button>
+    <button class="blue-btn"><a target="_blank" href="{{ url(asset('storage').'/'.$libro->enlace)}}" >Leer</a></button>
     <div class="book-about">
         <h2 class="about-title">Acerca de este libro</h2>
         <p>{{ $libro->comentarios }}</p>

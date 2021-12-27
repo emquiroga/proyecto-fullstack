@@ -10,7 +10,6 @@
         </a>
     </button>
     <div>
-        <h3>Hola {{ $user->first_name }}</h3>
     </div>
     <div>
         <img src="{{ asset('storage').'/'.$user->profile_picture}}" style="width: 10%;">

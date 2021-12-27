@@ -19,6 +19,10 @@ class user_libros_controller extends Controller
         }
 
         public function perfilVisitor($id){
+
+                if($id === Auth::id()){
+                        return $this->miPerfil();
+                };
                 $user = DB::table('users')->whereId($id)->first();
                 $libros = Libros::all()->where('idUser','=', $id);
                 return view('perfil.visitor', compact('user', 'libros'));
