@@ -15,7 +15,6 @@
     </div>
     <div>
         <div>     
-            <!-- <img src="storage/profile/{{$user->profile_picture}}" style="width: 9em; border-radius: 50%;"> -->
             <img src="{{ asset('storage').'/'.$user->profile_picture}}" style="width: 9em; border-radius: 50%;">
             <a href="#" id="update_image"><ion-icon name="camera-reverse" size="large" color="#333"></ion-icon></a>
             <div hidden id="form_update_image">
@@ -23,7 +22,7 @@
                     <label>Cambiar Imagen</label>
                     <input type="file" name="profile_picture" id="profile_picture">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="submit" class="btn-sm">
+                    <input type="submit" class="btn-sm" value="Subir">
                 </form>
             </div>
 

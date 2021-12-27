@@ -25,11 +25,13 @@
         <h5>Libros de {{ $user->first_name }}: </h5>
         @foreach($libros as $libro)
         <div>
-            <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
             <a href="{{ url('libros/' . $libro->id) }}">
+                <img src="{{ asset('storage').'/'.$libro->portada}}" style="width: 20%;">
                 <p>{{ $libro->titulo }}</p>
             </a>
-            <p>{{ $libro->categorias->descripcion }}</p>
+            <a href="{{ url('categoria'.'/'.$libro->categorias->id) }}">
+                <p>{{ $libro->categorias->descripcion }}</p>
+            </a>
         </div>
         @endforeach
         @else
