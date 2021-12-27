@@ -19,7 +19,7 @@ class LibrosController extends Controller
     public function index()
     {
         $params = [
-            'title' => 'Mis libros',
+            'title' => 'Todos nuestros libros',
         ];
         $libros['libros'] = Libros::all();
         return view('libros.index', $params, $libros);
@@ -31,7 +31,7 @@ class LibrosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $categorias = Categoria::all();
         $params = [
             'title' => 'Ingreso de Libro',

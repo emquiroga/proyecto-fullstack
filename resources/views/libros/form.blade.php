@@ -52,7 +52,7 @@
     <input class="form-control" type="number" min="1" max="5" name="valoracion" id="valoracion" value="{{isset($libro) ? $libro->valoracion : old('valoracion')}}">
 </div>
 <div class="form-group">
-    <label for="apa" class="">Paginas</label>
+    <label for="paginas" class="">Paginas</label>
     <input class="form-control" type="number" min=1 name="paginas" id="paginas" value="{{isset($libro) ? $libro->paginas : old('paginas')}}">
 </div>
 <div class="form-group">
@@ -60,10 +60,10 @@
     <input class="form-control" type="text" name="apa" id="apa" value="{{isset($libro) ? $libro->apa : old('apa')}}">
 </div>
 <div class="form-group">
-    <label for="categoria" class="">Formato</label>
+    <label for="formato" class="">Formato</label>
     <div>
         <select name="formato" id="formato" class="form-control">
-            <option>Seleccionar Formato</option>
+            <option value="{{ isset($formato) ? $libro->formato : old('Seleccionar Categoria') }}">
             <option value="PDF">PDF</option>
             <option value="EPUB">EPUB</option>
             <option value="MOVI">MOVI</option>
@@ -72,12 +72,13 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="categoria" class="">Categoria </label>
+    <label for="categoria" class="">Categoria</label>
     <div>
         <select name="idCategoria" id="idCategoria" class="form-control">
             <option>Seleccionar Categoria </option>
             @foreach ($categorias as $categoria)
             <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}">{{ $categoria->descripcion }}</option>
+
             @endforeach
         </select>
     </div>

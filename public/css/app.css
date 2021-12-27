@@ -11359,6 +11359,24 @@ ion-icon {
   margin: auto 0 !important;
 }
 
+.search-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent !important;
+}
+.search-button svg {
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+.search-button svg path {
+  fill: #7879F1 !important;
+}
+.search-button:hover svg path {
+  fill: #E5E6FF !important;
+}
+
 .icon-btn {
   width: 40px;
   height: auto;
@@ -11437,7 +11455,7 @@ ion-icon {
   align-items: center;
   gap: 3px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .navbar .container button {
     visibility: hidden;
   }
@@ -11448,6 +11466,9 @@ ion-icon {
 }
 .navbar .container a:hover {
   color: #E5E6FF !important;
+}
+.navbar .search-form {
+  position: relative;
 }
 .navbar .navbar-nav {
   align-items: flex-end;

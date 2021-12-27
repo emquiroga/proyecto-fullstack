@@ -17,7 +17,7 @@
             align-items: center;
             gap: 3px;
 
-            @media screen and (min-width: $tablet) {
+            @media screen and (min-width: $large) {
                   visibility: hidden;
               }
 
@@ -29,6 +29,9 @@
                 color: $bg-lightBlue !important;
             }
         }
+    }
+    .search-form {
+        position: relative;
     }
     .navbar-nav {
         align-items: flex-end;
