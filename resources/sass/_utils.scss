@@ -31,6 +31,31 @@
     width: 120px !important;
     margin: auto 0 !important;
 }
+.search-button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent !important;
+
+    svg{
+        width: 90%;
+        height: auto;
+        margin: auto;
+
+        path {
+            fill: $bg-blue !important;
+        }
+    }
+
+    &:hover {
+
+        svg {
+            path {
+                fill: $bg-lightBlue !important;
+            }
+        }
+    }
+}
 .icon-btn {
     width: 40px;
     height: auto;
