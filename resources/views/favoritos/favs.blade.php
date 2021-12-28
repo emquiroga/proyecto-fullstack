@@ -1,5 +1,3 @@
-<!--  -->
-
 @extends('layouts.app')
 @section('content')
     <div class="container">
@@ -8,12 +6,12 @@
             {{Session::get('mensaje')}}
         </div>
     @endif
-        <div class="title-row box-shadow">
+        <div class="title-row">
             <h3>Mis Favoritos</h3>
         </div>
         <div class="books-container mt-3">
             @foreach($user->librosFav as $libro)
-                    <div class="card-container">
+                    <div class="card-container" data-aos="fade-up">
                         <a href="{{ url('/libros/'.$libro->id) }}">
                             <img class="card-img-top" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada libro">
                         </a>

@@ -1,111 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<style>
-    .user_info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
 
-    .form_imagen {
-        font-size: 1em;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #profile_picture {
-        width: 75%;
-        height: auto;
-    }
-
-    .contenedor_imagen_perfil {
-        position: relative;
-    }
-
-    .imagen_perfil {
-        position: relative;
-        z-index: 50;
-        width: 11em;
-        border-radius: 50%;
-    }
-
-    .icono_update_image {
-        position: absolute;
-        bottom: 1px;
-        left: 40%;
-        z-index: 100;
-    }
-
-    .nombre_user {
-        /* margin-top: 2em; */
-        margin-bottom: 3em;
-        text-align: center;
-    }
-
-    .libros_propios {
-        margin-top: 3em;
-        margin-bottom: 3em;
-    }
-
-    .link_cambio_password {
-        color: #7879F1;
-    }
-
-    #update_image:hover {
-        color: orangered;
-    }
-    .barra
-    {
-        display: flex;
-        flex-direction:columns;
-        overflow: scroll;
-    }
-    .barra::-webkit-scrollbar {
-        display: none;
-    }
-    .libro_info {
-        width: 9em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .title {
-        font-size: 1em;
-        text-align: center;
-    }
-    .libro_img {
-        width: 200px;
-        height: 200px;
-        object-fit: contain;
-    }
-    .valoracion{
-        text-align: center;
-        bottom: 0;
-    }
-    .libro{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        margin-top: 1em;
-    }
-    .agregar_libro_link
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-    }
-</style>
-
-<div class="container">
+<div class="container" data-aos="zoom-in-up">
     <div class="row justify-content-around">
-
         <div class="col-12">
             <div class="title-row box-shadow">
                 <h3>Hola, {{ $user->first_name }}!</h3>
@@ -187,10 +84,6 @@
             </a>
         </div>
     </div>
-
-
-
-
 </div>
 
 <script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>

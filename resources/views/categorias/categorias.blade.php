@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container max-650">
-    <div class="title-row box-shadow">
+    <div class="title-row">
         <h3>Categorías</h3>
         <button class="icon-btn">
             <a href="{{ url()->previous() }}">

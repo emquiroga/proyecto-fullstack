@@ -1,68 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<style>
-    .user_info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    #profile_picture {
-        width: 75%;
-        height: auto;
-    }
-    .contenedor_imagen_perfil {
-        position: relative;
-    }
-
-    .imagen_perfil {
-        position: relative;
-        z-index: 50;
-        width: 11em;
-        border-radius: 50%;
-    }
-    .libros_propios {
-        margin-top: 3em;
-        margin-bottom: 3em;
-    }
-    .barra
-    {
-        display: flex;
-        flex-direction:columns;
-        overflow: scroll;
-    }
-    .barra::-webkit-scrollbar {
-        display: none;
-    }
-    .libro_info {
-        width: 9em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .title {
-        font-size: 1em;
-        text-align: center;
-    }
-    .libro_img {
-        width: 200px;
-        height: 200px;
-        object-fit: contain;
-    }
-    .valoracion{
-        text-align: center;
-        bottom: 0;
-    }
-    .libro{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        margin-top: 1em;
-    }
-</style>
-
 <div class="container">
     <div class="row justify-content-around">
         <div class="col-sm-12 col-md-12 col-lg-4 user_info">
@@ -78,7 +15,7 @@
         </div>
     </div>
 
- 
+
 
 <div class="row libros_propios">
            <hr>

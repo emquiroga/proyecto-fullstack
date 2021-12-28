@@ -6,7 +6,7 @@
             {{Session::get('mensaje')}}
         </div>
     @endif
-        <div class="title-row box-shadow">
+        <div class="title-row">
             <h3>Agregar un Libro</h3>
             <button class="icon-btn">
                 <a href="{{ url('/libros/create') }}">
@@ -16,7 +16,7 @@
         </div>
         <div class="books-container mt-3">
                 @foreach($libros as $libro)
-                <div class="card-container">
+                <div class="card-container" data-aos="fade-up">
                     <a href="{{ url('/libros/'.$libro->id) }}">
                         <img class="card-img-top" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada libro">
                         <p>{{$libro->titulo}}</p>

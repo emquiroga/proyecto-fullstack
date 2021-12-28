@@ -20,6 +20,6 @@
     </div>
     <hr>
     <div class="bottom-div">
-        <p>© Copyright 2018 - Biblioteca digital</p>
+        <p>© Copyright 2021 - Biblioteca Digital</p>
     </div>
 </footer>

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container max-650">
+    <div class="container max-650" data-aos="fade-down">
         <main>
             <section class="home-section">
-                <h1 class="project-title box-shadow">
+                <h1 class="project-title title-row">
                     Bienvenidos a nuestro proyecto final
                 </h1>
                 <div class="project-name">
                     <h3>Nombre del proyecto:</h3>
-                    <p>Biblioteca Digital</p>
+                    <h5>Biblioteca Digital</h5>
                 </div>
                 <div class="project-description">
                     <h3>Descripción del proyecto:</h3>
