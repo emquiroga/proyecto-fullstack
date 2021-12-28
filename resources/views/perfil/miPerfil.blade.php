@@ -112,7 +112,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-4 user_info">
+        <div class="col-sm-12 col-md-12 col-lg-4 user_info max-650">
             <div class="contenedor_imagen_perfil">
                 <img class="imagen_perfil" src="{{ asset('storage').'/'.$user->profile_picture}}">
                 <div class="icono_update_image">
