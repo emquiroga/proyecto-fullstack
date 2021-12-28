@@ -97,10 +97,12 @@ class LibrosController extends Controller
         if ($fav) {
             $estado = true;
         }
+
         $params = [
             'title' => 'Detalle del libro',
             'libro' => $libro,
-            'estado' => $estado
+            'estado' => $estado,
+            'user'=> Auth::id()
         ];
         return view('libros.show', $params);
     }
@@ -203,5 +205,32 @@ class LibrosController extends Controller
             return view('libros.busqueda', $params);
         }
         return view('libros.not_found');
+    }
+
+    public function secciones(){
+        $params = [
+                $mejores = [
+                    $titulo = 'Los mejores puntuados',
+                    DB::table('libros')->where('valoracion','=',5)->limit(10)->get()
+                ],
+                $mejoresSec = [
+                    $titulo = 'Los mas recientes',
+                    Libros::orderBy('created_at', 'desc')->limit(10)->get(),
+                ],
+                $fantasiaSecc = [
+                    $titulo = 'Ciencia Finccion / Fantasía',
+                    DB::table('libros')->where('idCategoria','=',5)->limit(10)->get(),
+                ],
+                $ayudaSecc = [
+                    $titulo = 'Autoayuda',
+                    DB::table('libros')->where('idCategoria','=',2)->limit(10)->get(),
+                ],
+                $comiscsSec = [
+                    $titulo = 'Commics',
+                    DB::table('libros')->where('idCategoria','=',17)->limit(10)->get()
+                ],
+        ];
+
+        return view('libros.secciones', compact('params'));
     }
 }

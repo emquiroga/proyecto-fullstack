@@ -1,41 +1,17 @@
-@extends('layouts.app')
-@section('content')
 <style>
-    .user_info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    #profile_picture {
-        width: 75%;
-        height: auto;
-    }
-    .contenedor_imagen_perfil {
-        position: relative;
-    }
-
-    .imagen_perfil {
-        position: relative;
-        z-index: 50;
-        width: 11em;
-        border-radius: 50%;
-    }
-    .libros_propios {
-        margin-top: 3em;
-        margin-bottom: 3em;
-    }
-    .barra
+    .slider
     {
         display: flex;
-        flex-direction:columns;
-        overflow: scroll;
+        overflow-x: scroll; 
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
-    .barra::-webkit-scrollbar {
+    .slider::-webkit-scrollbar {
         display: none;
     }
+
     .libro_info {
-        width: 9em;
+        width: 10em;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -61,32 +37,22 @@
         width: 80%;
         margin-top: 1em;
     }
+    .titulo_seccion{
+        margin-top: 2em;
+    }
+
 </style>
 
+@extends('layouts.app')
+@section('content')
+
 <div class="container">
-    <div class="row justify-content-around">
-        <div class="col-sm-12 col-md-12 col-lg-4 user_info">
-            <div class="contenedor_imagen_perfil">
-                <img class="imagen_perfil" src="{{ asset('storage').'/'.$user->profile_picture}}">
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 mt-3 justify-content-center">
-            <div class="text-center">
-                <p>{{ $user->first_name }} {{ $user->last_name }}</p>
-                <p><i>{{ $user->email }}</i></p>
-            </div>
-        </div>
-    </div>
 
- 
 
-<div class="row libros_propios">
-           <hr>
-           <br>
-        @if (count($libros)>0)
-        <h5 style="text-align: center;">Libros de {{ $user->first_name }}</h5>
-        <div class="slider barra">
-        @foreach($libros as $libro)
+    @foreach($params as $seccion)
+    <h5 class="titulo_seccion">{{ $seccion[0] }}</h5>
+    <div class="slider">
+        @foreach($seccion[1] as $libro)
         <div class="slide">
             <a href="{{ url('/libros/'.$libro->id) }}">
                 <div class="libro_info">
@@ -106,13 +72,9 @@
         </div>
         @endforeach
     </div>
-    @else
-    <p>No tiene libros publicados</p>
-    @endif
-</div>
+    @endforeach
+
 
 </div>
-
-<script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
 
 @endsection

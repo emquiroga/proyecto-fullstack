@@ -1,4 +1,5 @@
 const image_update = document.querySelector('#update_image');
+const slider_cards = document.querySelector('#slider_cards');
 
 image_update.addEventListener('click', formularioUpdate);
 

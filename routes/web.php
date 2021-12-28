@@ -43,5 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/categorias',[Categorias::class, 'getAll']);
     Route::get('/user/reset_password',[ResetPasswordController::class, 'showResetForm']);
     Route::post('reset_password', [AccountsController::class,'resetPassword']);
+    Route::get('/secciones', [LibrosController::class,'secciones']);
 
 });

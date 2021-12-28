@@ -21,8 +21,7 @@ class user_libros_controller extends Controller
 
         public function perfilVisitor($id)
         {
-
-                if ($id === Auth::id()) {
+                if ($id == Auth::id()) {
                         return $this->miPerfil();
                 };
                 $user = DB::table('users')->whereId($id)->first();
