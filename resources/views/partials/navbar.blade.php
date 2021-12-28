@@ -5,11 +5,6 @@
                 <path fill="#FFFFFF" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
             </svg>
         </button>
-        <!-- <form style="display:flex" method="POST" action="{{ url('/libros/busqueda') }} ">
-            {{csrf_field()}}
-            <div><input id="libro" name="libro" class="form-control" type="search" placeholder="Buscar Libro" aria-label="Search"></div>
-            <div><button class="btn btn-outline-success" type="submit">Buscar</button></div>
-        </form> -->
         <form class="form-inline search-form" method="POST" action="{{ url('/libros/busqueda') }} ">
             {{csrf_field()}}
             <input id="libro" name="libro" class="form-control mr-sm-2 nav-search" type="search" placeholder="Buscar Libro" aria-label="Search">
@@ -36,6 +31,9 @@
                 <li class="nav-item">
                     <a href="{{url('/categorias')}}" class="nav-link">Categorias</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{url('/secciones')}}" class="nav-link">Secciones</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Opciones
@@ -55,8 +53,5 @@
                 </li>
             </ul>
         </div>
-        <!-- <a href="{{url('/perfil')}}" class="nav-link">
-            <img src="{{asset('storage').'/'.$user->profile_picture}}" style="width: 2.7em; border-radius: 50%;" alt="">
-        </a> -->
     </div>
 </nav>

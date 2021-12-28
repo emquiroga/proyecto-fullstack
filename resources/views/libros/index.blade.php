@@ -7,7 +7,6 @@
         </div>
     @endif
         <div class="title-row box-shadow">
-            <!-- <h3>{{$title}}</h3> -->
             <h3>Agregar un Libro</h3>
             <button class="icon-btn">
                 <a href="{{ url('/libros/create') }}">
