@@ -9,6 +9,7 @@
             </svg>
         </a>
 </button>
+<br>
     <div class="form-container">
         <form method="POST" action="{{ url('/reset_password') }}">
             @csrf
@@ -52,13 +53,17 @@
             </div>
 
             <div class="row mb-0">
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="blue-btn">
-                        {{ __('Reset Password') }}
-                    </button>
-                </div>
+                    <div class="col-md-6 offset-md-4 mb-2">
+                        <button type="submit" class="blue-btn">
+                            {{ __('Reset Password') }}
+                        </button>
+                    </div>
+                 <div class="col-md-6 offset-md-4 mb-2 text-center">
+                    <a class="blue-btn" href="{{ url('libros/') }}">Cancelar</a>
+                 </div>
             </div>
-            <a class="blue-btn mt-2 text-center" href="{{ url('libros/') }}">Cancelar</a>
+         
+           
         </form>
     </div>
 </div>
