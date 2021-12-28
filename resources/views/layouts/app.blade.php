@@ -25,7 +25,7 @@
 <body>
     <div id="app">
         @if (!Auth::guest())
-        @include ('partials.navbar')
+        @include ('partials.navbar' , [ $user = Auth::user()])
         @endif
         <main class="py-4">
             @yield('content')

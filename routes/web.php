@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/favoritos/user/{id}',[FavoritosController::class, 'favUser']);
     Route::get('/favoritos/{id}',[FavoritosController::class, 'fav_noFav']);
     Route::get('/perfil',[user_libros_controller::class, 'miPerfil']);
-    Route::post('/perfil',[user_libros_controller::class, 'update']);
+    Route::post('/perfil',[user_libros_controller::class, 'updateImage']);
     Route::get('/perfil/{id}',[user_libros_controller::class, 'perfilVisitor']);
     Route::get('/categoria/{id}',[libros_categorias_controller::class, 'index']);
     Route::get('/categorias',[Categorias::class, 'getAll']);
