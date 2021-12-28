@@ -19,19 +19,22 @@
                 </svg>
             </button>
         </form>
+        <a href="{{url('/perfil')}}" class="nav-link">
+            <img src="{{asset('storage').'/'.$user->profile_picture}}" style="width: 2.7em; border-radius: 50%;" alt="">
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a href={{url('/libros')}} class="nav-link">Libros</a>
+                    <a href="{{url('/libros')}}" class="nav-link">Libros</a>
                 </li>
                 <li class="nav-item">
-                    <a href={{url('/contacto')}} class="nav-link">Contacto</a>
+                    <a href="{{url('/contacto')}}" class="nav-link">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a href={{url('/favoritos')}} class="nav-link">Favoritos</a>
+                    <a href="{{url('/favoritos')}}" class="nav-link">Favoritos</a>
                 </li>
                 <li class="nav-item">
-                    <a href={{url('/categorias')}} class="nav-link">Categorias</a>
+                    <a href="{{url('/categorias')}}" class="nav-link">Categorias</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -51,7 +54,9 @@
                     </div>
                 </li>
             </ul>
-
         </div>
+        <!-- <a href="{{url('/perfil')}}" class="nav-link">
+            <img src="{{asset('storage').'/'.$user->profile_picture}}" style="width: 2.7em; border-radius: 50%;" alt="">
+        </a> -->
     </div>
 </nav>
