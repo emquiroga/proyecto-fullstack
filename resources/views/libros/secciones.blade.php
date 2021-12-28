@@ -2,13 +2,16 @@
     .slider
     {
         display: flex;
-        overflow-x: scroll; 
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        flex-direction: row;
+        padding-bottom: 2rem;
+        overflow-x: scroll;
+        scrollbar-visible: true;
+        /* -ms-overflow-style: none;
+        scrollbar-width: none; */
     }
-    .slider::-webkit-scrollbar {
+    /* .slider::-webkit-scrollbar {
         display: none;
-    }
+    } */
 
     .libro_info {
         width: 10em;

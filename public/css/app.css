@@ -11361,7 +11361,7 @@ ion-icon {
 
 .search-button {
   position: absolute;
-  top: 20px;
+  top: 5px;
   right: 5px;
   background-color: transparent !important;
   transition: all 150ms ease-in-out;

@@ -144,16 +144,11 @@
             </div>
         </div>
     </div>
-
-
-
-<div class="row libros_propios">
-           <hr>
-           <br>
+    <div class="title-row box-shadow">
+        <h3>Tus Libros</h3>
+    </div>
+    <div class="row libros_propios">
         @if (count($libros)>0)
-        <div class="title-row box-shadow">
-            <h3>Tus Libros</h3>
-        </div>
         <div class="slider barra">
         @foreach($libros as $libro)
         <div class="slide max-650">
