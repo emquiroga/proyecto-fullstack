@@ -63,5 +63,8 @@ class categorias_seeder extends Seeder
               \DB::table("categorias")->insert(
                           ['descripcion'  => 'Salud/Cuerpo/mente']
               );
+              \DB::table("categorias")->insert(
+                          ['descripcion'  => 'Comics']
+              );
     }
 }
