@@ -107,7 +107,7 @@
     <div class="row justify-content-around">
 
         <div class="col-12">
-            <div class="nombre_user">
+            <div class="title-row box-shadow">
                 <h3>Hola, {{ $user->first_name }}!</h3>
             </div>
         </div>
@@ -130,10 +130,10 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="submit" class="btn-sm" value="Subir">
                         </div>
-                       
+
                     </form>
             </div>
-          
+
         </div>
         <div class="col-sm-12 col-lg-4 mt-3">
             <div>
@@ -145,16 +145,18 @@
         </div>
     </div>
 
- 
+
 
 <div class="row libros_propios">
            <hr>
            <br>
         @if (count($libros)>0)
-        <h5 style="text-align: center;">Tus Libros</h5>
+        <div class="title-row box-shadow">
+            <h3>Tus Libros</h3>
+        </div>
         <div class="slider barra">
         @foreach($libros as $libro)
-        <div class="slide">
+        <div class="slide max-650">
             <a href="{{ url('/libros/'.$libro->id) }}">
                 <div class="libro_info">
                     <img class="libro_img" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada Libro" alt="card-img">
@@ -190,7 +192,7 @@
             </a>
         </div>
     </div>
-        
+
 
 
 

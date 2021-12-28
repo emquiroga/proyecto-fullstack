@@ -3,6 +3,11 @@
 
     .container {
         color: $bg-lightBlue;
+        @media screen and (min-width: 992px) {
+            .navbar-toggler {
+                visibility: hidden;
+            }
+        }
 
         button {
             width: 25px;
@@ -16,11 +21,6 @@
             justify-content: center;
             align-items: center;
             gap: 3px;
-
-            @media screen and (min-width: $large) {
-                  visibility: hidden;
-              }
-
         }
         a {
             color: white;
@@ -45,7 +45,7 @@
     }
     .dropdown-menu {
         background-color: $bg-blue !important;
-        left: -150%;
+        left: -80%;
         border: none;
         text-align: right;
 

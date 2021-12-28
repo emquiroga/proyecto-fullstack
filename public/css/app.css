@@ -11361,9 +11361,10 @@ ion-icon {
 
 .search-button {
   position: absolute;
-  top: 5px;
+  top: 20px;
   right: 5px;
   background-color: transparent !important;
+  transition: all 150ms ease-in-out;
 }
 .search-button svg {
   width: 90%;
@@ -11442,6 +11443,11 @@ ion-icon {
 .navbar .container {
   color: #E5E6FF;
 }
+@media screen and (min-width: 992px) {
+  .navbar .container .navbar-toggler {
+    visibility: hidden;
+  }
+}
 .navbar .container button {
   width: 25px;
   height: 25px;
@@ -11454,11 +11460,6 @@ ion-icon {
   justify-content: center;
   align-items: center;
   gap: 3px;
-}
-@media screen and (min-width: 1024px) {
-  .navbar .container button {
-    visibility: hidden;
-  }
 }
 .navbar .container a {
   color: white;
@@ -11481,7 +11482,7 @@ ion-icon {
 }
 .navbar .dropdown-menu {
   background-color: #7879F1 !important;
-  left: -150%;
+  left: -80%;
   border: none;
   text-align: right;
 }
@@ -11513,13 +11514,10 @@ footer {
     gap: 0;
   }
 }
-footer .top-div h3, footer .top-div .h3 {
-  margin: 1rem 0;
-  padding: 0.375rem;
-  font-size: 1.5rem;
-  text-align: center;
-  color: white;
-  background-color: #7879F1;
+footer .top-div .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer .top-div ul {
   display: flex;
@@ -11545,7 +11543,7 @@ footer .bottom-div p {
 .title-row {
   width: 100%;
   max-width: 800px;
-  margin: auto;
+  margin: 2rem auto;
   padding: 1rem 0;
   display: flex;
   flex-flow: row wrap;

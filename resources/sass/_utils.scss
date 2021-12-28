@@ -33,9 +33,10 @@
 }
 .search-button{
     position: absolute;
-    top: 5px;
+    top: 20px;
     right: 5px;
     background-color: transparent !important;
+    transition: all 150ms ease-in-out;
 
     svg{
         width: 90%;

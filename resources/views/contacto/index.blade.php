@@ -6,7 +6,9 @@
                 {{ session()->get('mensaje') }}
             </div>
         @endif
-        <h3 class="mb-3">{{$title}}</h3>
+        <div class="title-row box-shadow">
+            <h3 class="mb-3">{{$title}}</h3>
+        </div>
         <form action="{{route('contacto.index')}}" method="POST">
             @csrf
             @if($errors->any())
