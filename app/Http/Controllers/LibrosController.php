@@ -223,7 +223,7 @@ class LibrosController extends Controller
                 ],
                 $mejoresSec = [
                     $titulo = 'Los mas recientes',
-                    Libros::orderBy('created_at', 'desc')
+                    Libros::orderBy('fecha_publicacion', 'desc')
                         ->limit(10)
                         ->get(),
                 ],

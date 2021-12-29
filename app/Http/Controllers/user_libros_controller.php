@@ -42,10 +42,10 @@ class user_libros_controller extends Controller
 
                 if ($request->hasFile('profile_picture')) {
                         $user = Auth::user();
-                        if ($user->profile_picture !== 'profile/default.png') {
-                                Storage::delete('public/' . $user->profile_picture);
-                                $user->profile_picture = $request->file('profile_picture')->store('profile', 'public');
-                        }
+                                if ($user->profile_picture != 'profile/default.png') {
+                                        Storage::delete('public/profile' . $user->profile_picture);
+                                }
+                        $user->profile_picture = $request->file('profile_picture')->store('profile', 'public');
                         User::where('id', '=', Auth::id())->update([
                                 'profile_picture' => $user->profile_picture
                         ]);

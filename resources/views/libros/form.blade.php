@@ -64,7 +64,6 @@
     <div>
         <select name="formato" id="formato" class="form-control">
             <option>Seleccionar Formato </option>
-            <option value="{{ isset($libro) ? $libro->formato : old('formato') }}">
             <option value="PDF">PDF</option>
             <option value="EPUB">EPUB</option>
             <option value="MOVI">MOVI</option>
@@ -77,8 +76,9 @@
     <div>
         <select name="idCategoria" id="idCategoria" class="form-control">
             <option>Seleccionar Categoria </option>
-            @foreach ($categorias as $categoria)
-            <option value="{{ isset($libro) ? $libro->categorias->descripcion : old('idCtegoria') }}">{{ $categoria->descripcion }}</option>
+                @foreach ($categorias as $categoria)
+                    <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}"
+                >{{ $categoria->descripcion }}</option>
             @endforeach
         </select>
     </div>
