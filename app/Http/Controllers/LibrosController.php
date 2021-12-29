@@ -21,7 +21,7 @@ class LibrosController extends Controller
         $params = [
             'title' => 'Todos nuestros libros',
         ];
-        $libros['libros'] = Libros::all();
+        $libros['libros'] =  DB::table('libros')->inRandomOrder()->get();
         return view('libros.index', $params, $libros);
     }
 
@@ -52,7 +52,7 @@ class LibrosController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'portada' => 'required|max:10000|mimes:jpeg,jpg,png',
-            'enlace' => 'required',
+            'enlace' => 'required|max:10000|mimes:pdf,epub,movi,rtf',
             'comentarios' => 'required',
             'editorial' => 'required',
             'edicion' => 'required',
@@ -68,6 +68,7 @@ class LibrosController extends Controller
         $mensaje = [
             'required' => 'El campo :attribute es requerido',
             'portada.required' => 'La portada es requerida',
+            'enlace.required' => 'El libro es requerido',
         ];
         $this->validate($request, $validations, $mensaje);
 
@@ -75,6 +76,9 @@ class LibrosController extends Controller
 
         if($request->hasFile('portada')){
             $libro['portada'] = $request->file('portada')->store('uploads', 'public');
+        }
+        if($request->hasFile('enlace')){
+            $libro['enlace'] = $request->file('enlace')->store('libros', 'public');
         }
         $libro['idUser'] = Auth::id();
         Libros::insert($libro);
@@ -138,7 +142,7 @@ class LibrosController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'portada' => 'required|max:10000|mimes:jpeg,jpg,png',
-            'enlace' => 'required',
+            'enlace' => 'required|max:10000|mimes:pdf,epub,movi,rtf',
             'comentarios' => 'required',
             'editorial' => 'required',
             'edicion' => 'required',
@@ -211,23 +215,38 @@ class LibrosController extends Controller
         $params = [
                 $mejores = [
                     $titulo = 'Los mejores puntuados',
-                    DB::table('libros')->where('valoracion','=',5)->limit(10)->get()
+                    DB::table('libros')
+                        ->inRandomOrder()
+                        ->where('valoracion','=',5)
+                        ->limit(10)
+                        ->get()
                 ],
                 $mejoresSec = [
                     $titulo = 'Los mas recientes',
-                    Libros::orderBy('created_at', 'desc')->limit(10)->get(),
+                    Libros::orderBy('created_at', 'desc')
+                        ->limit(10)
+                        ->get(),
                 ],
                 $fantasiaSecc = [
                     $titulo = 'Ciencia Finccion / Fantasía',
-                    DB::table('libros')->where('idCategoria','=',5)->limit(10)->get(),
+                    DB::table('libros')->where('idCategoria','=',5)
+                        ->inRandomOrder()
+                        ->limit(10)
+                        ->get(),
                 ],
                 $ayudaSecc = [
                     $titulo = 'Autoayuda',
-                    DB::table('libros')->where('idCategoria','=',2)->limit(10)->get(),
+                    DB::table('libros')->where('idCategoria','=',2)
+                    ->inRandomOrder()
+                    ->limit(10)
+                    ->get(),
                 ],
                 $comiscsSec = [
-                    $titulo = 'Commics',
-                    DB::table('libros')->where('idCategoria','=',17)->limit(10)->get()
+                    $titulo = 'Misterio / Suspenso',
+                    DB::table('libros')->where('idCategoria','=',12)
+                        ->inRandomOrder()
+                        ->limit(10)
+                        ->get()
                 ],
         ];
 

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row justify-content-around">
-        <div class="col-sm-12 col-md-12 col-lg-4 user_info">
+    <div class="row justify-content-around mt-5">
+        <div class="col-sm-12 col-md-12 col-lg-12 user_info">
             <div class="contenedor_imagen_perfil">
                 <img class="imagen_perfil" src="{{ asset('storage').'/'.$user->profile_picture}}">
             </div>
         </div>
-        <div class="col-sm-12 col-lg-4 mt-3 justify-content-center">
+        <div class="col-sm-12 col-lg-12 mt-3 justify-content-center">
             <div class="text-center">
                 <p>{{ $user->first_name }} {{ $user->last_name }}</p>
                 <p><i>{{ $user->email }}</i></p>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-
+ 
 
 <div class="row libros_propios">
            <hr>
@@ -37,6 +37,7 @@
                                 </svg>
                                 @endfor
                         </div>
+                        <div><a href=""></a></div>
                     </div>
                 </div>
             </a>
@@ -49,7 +50,4 @@
 </div>
 
 </div>
-
-<script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
-
 @endsection

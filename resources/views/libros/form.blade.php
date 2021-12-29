@@ -17,11 +17,11 @@
 </div>
 <div class="form-group mb-3">
     <label for="portada" class="">Portada</label>
-    <input class="mt-3 max-100-input" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
+    <input style="width: 100%;" class="mt-3 max-100-input" type="file" name="portada" id="portada" value="{{isset($libro) ? $libro->portada : old('portada')}}">
 </div>
-<div class="form-group">
-    <label for="enlace" class="">Enlace </label>
-    <input class="form-control" type="text" name="enlace" id="enlace" value="{{isset($libro) ? $libro->enlace : old('enlace') }}">
+<div class="form-group mb-3">
+    <label for="enlace" class="">Libro</label>
+    <input style="width: 100%;" class="mt-3 max-100-input" type="file" name="enlace" id="enlace" value="{{isset($libro) ? $libro->enlace : old('enlace')}}">
 </div>
 <div class="form-group">
     <label for="comentarios" class="">Comentarios </label>
@@ -63,7 +63,8 @@
     <label for="formato" class="">Formato</label>
     <div>
         <select name="formato" id="formato" class="form-control">
-            <option value="{{ isset($formato) ? $libro->formato : old('Seleccionar Categoria') }}">
+            <option>Seleccionar Formato </option>
+            <option value="{{ isset($libro) ? $libro->formato : old('formato') }}">
             <option value="PDF">PDF</option>
             <option value="EPUB">EPUB</option>
             <option value="MOVI">MOVI</option>
@@ -77,7 +78,7 @@
         <select name="idCategoria" id="idCategoria" class="form-control">
             <option>Seleccionar Categoria </option>
             @foreach ($categorias as $categoria)
-            <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}">{{ $categoria->descripcion }}</option>
+            <option value="{{ isset($libro) ? $libro->categorias->descripcion : old('idCtegoria') }}">{{ $categoria->descripcion }}</option>
             @endforeach
         </select>
     </div>

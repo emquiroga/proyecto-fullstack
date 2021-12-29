@@ -1,15 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container" data-aos="zoom-in-up">
+<div class="container">
     <div class="row justify-content-around">
+
         <div class="col-12">
-            <div class="title-row box-shadow">
+            <div class="nombre_user">
                 <h3>Hola, {{ $user->first_name }}!</h3>
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-4 user_info max-650">
+        <div class="col-sm-12 col-md-12 col-lg-4 user_info">
             <div class="contenedor_imagen_perfil">
                 <img class="imagen_perfil" src="{{ asset('storage').'/'.$user->profile_picture}}">
                 <div class="icono_update_image">
@@ -27,10 +28,10 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="submit" class="btn-sm" value="Subir">
                         </div>
-
+                       
                     </form>
             </div>
-
+          
         </div>
         <div class="col-sm-12 col-lg-4 mt-3">
             <div>
@@ -41,14 +42,17 @@
             </div>
         </div>
     </div>
-    <div class="title-row box-shadow">
-        <h3>Tus Libros</h3>
-    </div>
-    <div class="row libros_propios">
+
+ 
+
+<div class="row libros_propios">
+           <hr>
+           <br>
         @if (count($libros)>0)
+        <h5 style="text-align: center;">Tus Libros</h5>
         <div class="slider barra">
         @foreach($libros as $libro)
-        <div class="slide max-650">
+        <div class="slide">
             <a href="{{ url('/libros/'.$libro->id) }}">
                 <div class="libro_info">
                     <img class="libro_img" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada Libro" alt="card-img">
@@ -84,6 +88,10 @@
             </a>
         </div>
     </div>
+        
+
+
+
 </div>
 
 <script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>

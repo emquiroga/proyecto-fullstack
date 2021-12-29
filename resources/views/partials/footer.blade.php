@@ -12,9 +12,9 @@
             </svg>
         </div>
         <ul>
-            <li><a href="" class="nav-link">Acerca de</a></li>
-            <li><a href="" class="nav-link">¿Quiénes somos?</a></li>
-            <li><a href="" class="nav-link">Contacto</a></li>
+            <li><a href="{{url('/')}}" class="nav-link">Acerca de</a></li>
+            <li><a href="{{url('/')}}" class="nav-link">¿Quiénes somos?</a></li>
+            <li><a href="{{url('/contacto')}}" class="nav-link">Contacto</a></li>
             <li><a href="" class="nav-link">Agradecimientos</a></li>
         </ul>
     </div>

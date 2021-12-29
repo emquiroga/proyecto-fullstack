@@ -13,10 +13,6 @@ class FavoritosController extends Controller
     public function index(){
         return view('favoritos.favs',array('user' => Auth::user()));
     }
-    public function favUser($id){
-        $user = User::find($id);
-        return view('favoritos.favs',compact('user'));
-    }
 
     public function fav_noFav($idLibro)
     {

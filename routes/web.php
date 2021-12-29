@@ -34,7 +34,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/libros/busqueda', [LibrosController::class, 'search'])->name('libro');
     Route::resource('contacto', ContactoController::class);
     Route::get('/favoritos',[FavoritosController::class, 'index']);
-    Route::get('/favoritos/user/{id}',[FavoritosController::class, 'favUser']);
     Route::get('/favoritos/{id}',[FavoritosController::class, 'fav_noFav']);
     Route::get('/perfil',[user_libros_controller::class, 'miPerfil']);
     Route::post('/perfil',[user_libros_controller::class, 'updateImage']);
