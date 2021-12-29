@@ -218,34 +218,34 @@ class LibrosController extends Controller
                     DB::table('libros')
                         ->inRandomOrder()
                         ->where('valoracion','=',5)
-                        ->limit(10)
+                        ->limit(15)
                         ->get()
                 ],
                 $mejoresSec = [
                     $titulo = 'Los mas recientes',
                     Libros::orderBy('fecha_publicacion', 'desc')
-                        ->limit(10)
+                        ->limit(15)
                         ->get(),
                 ],
                 $fantasiaSecc = [
                     $titulo = 'Ciencia Finccion / Fantasía',
                     DB::table('libros')->where('idCategoria','=',5)
                         ->inRandomOrder()
-                        ->limit(10)
+                        ->limit(15)
                         ->get(),
                 ],
                 $ayudaSecc = [
                     $titulo = 'Autoayuda',
                     DB::table('libros')->where('idCategoria','=',2)
                     ->inRandomOrder()
-                    ->limit(10)
+                    ->limit(15)
                     ->get(),
                 ],
                 $comiscsSec = [
                     $titulo = 'Misterio / Suspenso',
                     DB::table('libros')->where('idCategoria','=',12)
                         ->inRandomOrder()
-                        ->limit(10)
+                        ->limit(15)
                         ->get()
                 ],
         ];

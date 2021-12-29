@@ -44,12 +44,13 @@
 
  
 
+<!-- <div class="row libros_propios"> -->
 <div class="row libros_propios">
-           <hr>
-           <br>
+        <hr>
+        <br>
         @if (count($libros)>0)
         <h5 style="text-align: center;">Tus Libros</h5>
-        <div class="slider barra">
+        <div class="slider">
         @foreach($libros as $libro)
         <div class="slide">
             <a href="{{ url('/libros/'.$libro->id) }}">
