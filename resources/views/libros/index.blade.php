@@ -24,7 +24,6 @@
                     <div class="img_card_control">
                         <img class="card-img-top" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada libro">
                     </div>
-                    <!-- <p>{{$libro->titulo}}</p> -->
                     <p>{{ \Illuminate\Support\Str::limit($libro->titulo, 25, $end='...') }}</p>
                 </a>
             </div>

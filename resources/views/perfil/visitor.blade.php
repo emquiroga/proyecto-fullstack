@@ -29,7 +29,7 @@
                 <div class="libro_info">
                     <img class="libro_img" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada Libro" alt="card-img">
                     <div class="libro">
-                        <h5 class="title">{{ $libro->titulo }}</h5>
+                    <h5 class="title">{{ \Illuminate\Support\Str::limit($libro->titulo, 20, $end='...') }}</h5>
                         <div class="valoracion rating">
                             @for ($i = 0; $i < $libro->valoracion; $i++)
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
