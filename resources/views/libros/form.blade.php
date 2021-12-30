@@ -72,9 +72,9 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="categoria" class="">Categoria</label>
+    <label for="categoria">Categoria</label>
     <div>
-        <select name="idCategoria" id="idCategoria" class="form-control">
+        <select name="idCategoria" id="idCategoria" class="form-control slider_cat">
             <option>Seleccionar Categoria </option>
                 @foreach ($categorias as $categoria)
                     <option value="{{ isset($categoria) ? $categoria->id : old('Seleccionar Categoria') }}"

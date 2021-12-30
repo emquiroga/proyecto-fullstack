@@ -145,5 +145,34 @@
         }
     }
 }
+@media (min-width:1025px) {
+    .card_libro_control{
+        height:330px;
+        margin-bottom: .5em;
+    }
+    .img_card_control{
+        height: 310px; overflow: hidden
+    }
+}
+@media only screen and (max-width: 768px) {
+
+    .card_libro_control{
+        height:250px;
+        margin-bottom: .5em;
+    }
+    .img_card_control{
+        height: 200px; overflow: hidden
+    }
+}
+@media (max-width:480px) {
+    .card_libro_control{
+        height:220px;
+        margin-bottom: .5em;
+    }
+    .img_card_control{
+        height:200px; overflow: hidden
+    }
+
+}
 
 

@@ -54,3 +54,15 @@
 .titulo_seccion{
     margin-top: 2em;
 }
+
+.slider_cat::-webkit-scrollbar {
+    appearance:none;
+    width: 3px;
+    overflow-y: hidden;
+    padding: 0;
+}
+.slider_cat::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(120,121,241, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

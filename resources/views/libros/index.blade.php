@@ -19,10 +19,16 @@
     <div class="books-container mt-3">
         @foreach($libros as $libro)
         <div class="card-container" data-aos="fade-up">
-            <a href="{{ url('/libros/'.$libro->id) }}">
-                <img class="card-img-top" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada libro">
-                <p>{{$libro->titulo}}</p>
-            </a>
+            <div class="card_libro_control">
+                <a href="{{ url('/libros/'.$libro->id) }}">
+                    <div class="img_card_control">
+                        <img class="card-img-top" src="{{asset('storage').'/'.$libro->portada}}" alt="Portada libro">
+                    </div>
+                    <!-- <p>{{$libro->titulo}}</p> -->
+                    <p>{{ \Illuminate\Support\Str::limit($libro->titulo, 25, $end='...') }}</p>
+                </a>
+            </div>
+
             <div class="rating">
                 @for ($i = 0; $i < $libro->valoracion; $i++)
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
