@@ -138,37 +138,51 @@ class LibrosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+
         $validations = [
             'titulo' => 'required',
             'autor' => 'required',
-            'portada' => 'required|max:10000|mimes:jpeg,jpg,png',
-            'enlace' => 'required|max:10000|mimes:pdf,epub,movi,rtf',
             'comentarios' => 'required',
             'editorial' => 'required',
             'edicion' => 'required',
             'isbn' => 'required',
             'fecha_publicacion' => 'required',
-            'idCategoria' => 'required',
             'idioma' => 'required',
             'valoracion' => 'required',
             'apa' => 'required',
             'paginas' => 'required',
-            'formato' => 'required',
         ];
         $mensaje = [
             'required' => 'El campo :attribute es requerido',
-            'portada.required' => 'La portada es requerida',
         ];
         $this->validate($request, $validations, $mensaje);
+
+        $libro = Libros::find($id);
 
         $libro_update = request()->except('_token', '_method');
 
         if($request->hasFile('portada')){
-            $libro = Libros::findOrFail($id);
             Storage::delete('public/' . $libro->portada);
-            $libro_update['portada'] = $request->file('portada')->store('uploads', 'public');
+            $libro_update['portada'] = $request->file('portada')->store('profile', 'public');
+        }else {
+            $libro_update['portada'] = $libro->portada;
         }
 
+        if($request->hasFile('enlace')){
+            Storage::delete('public/' . $libro->enlace);
+            $libro_update['enlace'] = $request->file('enlace')->store('profile', 'public');
+        }else {
+            $libro_update['enlace'] = $libro->portada;
+        }
+
+        if($libro_update['formato'] == "Seleccionar Formato"){
+            $libro_update['formato'] = $libro->formato;
+        }
+        
+        if($libro_update['idCategoria'] == "Seleccionar Categoria"){
+            $libro_update['idCategoria'] = $libro->idCategoria;
+        }
         Libros::where('id', '=', $id)->update($libro_update);
 
         $libro = Libros::findOrFail($id);
